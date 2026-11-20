@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 16 · Writing Task 1 · Online Shopping in Australia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --navy:#1d2b4f; --ink:#24304a; --muted:#64708a; --line:#d9dde6;
+  --paper:#f6f4ef; --card:#ffffff;
+  --teal:#2f7d6d; --teal-soft:#e3f1ed;
+  --orange:#c47a45; --orange-soft:#f8ebe0;
+  --ok:#1f8a5b; --ok-soft:#e2f4ea; --bad:#c8463d; --bad-soft:#fbe6e4;
+  --gram:#fff1b8;
+}
+*{box-sizing:border-box}
+html{color-scheme:light}
+
+.wrap{max-width:1000px;margin:0 auto;padding:28px 22px 80px}
+
+/* header */
+.top{background:var(--navy);color:#fff;border-radius:18px;padding:26px 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-end}
+.top .kicker{font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.75;font-weight:600}
+.top h1{margin:4px 0 0;font-size:30px;line-height:1.2;font-weight:800}
+.top h1 span{color:#f2b98d}
+.who{display:grid;grid-template-columns:auto 190px;gap:6px 10px;font-size:14px;align-items:center}
+.who input{background:transparent;border:none;border-bottom:1.5px solid rgba(255,255,255,.55);color:#fff;font:inherit;padding:2px 4px;outline:none}
+.scorebar{position:sticky;top:0;z-index:20;margin:14px 0 0;background:rgba(246,244,239,.94);backdrop-filter:blur(6px);padding:10px 0;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600}
+.pill b{color:var(--teal)}
+.nav a{font-size:13px;color:var(--navy);text-decoration:none;font-weight:600;padding:6px 10px;border-radius:999px;border:1px solid transparent}
+.nav a:hover{border-color:var(--line);background:#fff}
+.spacer{flex:1}
+
+/* section */
+section.part{margin-top:34px}
+.part-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.part-tag{background:var(--teal);color:#fff;font-weight:800;border-radius:12px;min-width:46px;height:46px;display:grid;place-items:center;font-size:20px}
+.part-head h2{margin:0;font-size:24px;color:var(--navy);line-height:1.2}
+.part-head p{margin:2px 0 0;color:var(--muted);font-size:14.5px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:16px}
+.card h3{margin:0 0 6px;font-size:18.5px;color:var(--navy)}
+.vn{color:var(--muted);font-size:15px;font-style:italic}
+.task{border-left:5px solid var(--orange)}
+.task .prompt{font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.55}
+
+/* boxes */
+.rule{background:#f3f6fb;border:1px dashed #b9c4d8;border-radius:12px;padding:12px 16px;margin:12px 0;font-size:15.5px}
+.rule .pat{font-weight:700;color:var(--navy);font-size:16.5px}
+.bank{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px}
+.chip{border:1.5px solid var(--teal);color:var(--teal);background:#fff;border-radius:999px;padding:4px 13px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit}
+.chip:hover{background:var(--teal-soft)}
+.chip.static{cursor:default;border-color:var(--line);color:var(--ink)}
+
+/* questions */
+ol.qs{margin:8px 0 0;padding-left:26px}
+ol.qs>li{margin:10px 0}
+input.gap{font:inherit;font-weight:600;color:var(--navy);border:none;border-bottom:2px solid #9aa6bd;background:#fbfbfd;padding:1px 6px;min-width:90px;outline:none;border-radius:4px 4px 0 0;text-align:center}
+input.gap.w-s{width:70px;min-width:70px}
+input.gap.w-l{width:200px}
+input.gap:focus{border-bottom-color:var(--teal);background:var(--teal-soft)}
+select{font:inherit;font-size:15.5px;padding:5px 8px;border:1.5px solid #b7c0d1;border-radius:8px;background:#fff;color:var(--ink);max-width:100%}
+.ok{border-color:var(--ok)!important;background:var(--ok-soft)!important;color:var(--ok)!important}
+.bad{border-color:var(--bad)!important;background:var(--bad-soft)!important;color:var(--bad)!important}
+.shown{border-color:var(--orange)!important;background:var(--orange-soft)!important;color:#8a4a1d!important}
+.radio-q .opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.radio-q label{border:1.5px solid #c4ccda;border-radius:10px;padding:5px 14px;cursor:pointer;font-size:15.5px;background:#fff}
+.radio-q input{display:none}
+.radio-q input:checked+span{font-weight:700;color:var(--navy)}
+.radio-q label:has(input:checked){border-color:var(--navy);background:#eef1f8}
+.radio-q label.ok,.radio-q label.bad,.radio-q label.shown{font-weight:700}
+.match{width:100%;border-collapse:collapse;margin-top:8px}
+.match td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:middle;font-size:16px}
+.match td:first-child{font-weight:600;color:var(--navy);width:40%}
+.arrow{color:var(--muted);width:30px;text-align:center}
+
+/* buttons */
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+button.b{font:inherit;font-size:14.5px;font-weight:700;border-radius:10px;padding:8px 16px;cursor:pointer;border:1.5px solid var(--navy);background:var(--navy);color:#fff}
+button.b.ghost{background:#fff;color:var(--navy)}
+button.b:disabled{opacity:.45;cursor:not-allowed}
+button.b.warm{background:var(--orange);border-color:var(--orange)}
+.result{font-weight:700;font-size:15px;align-self:center}
+
+/* data table */
+table.data{border-collapse:collapse;width:100%;margin-top:6px;font-size:16px}
+table.data th,table.data td{border:1px solid var(--line);padding:8px 10px;text-align:center}
+table.data th{background:#eef1f8;color:var(--navy)}
+table.data td:first-child{font-weight:700;color:var(--navy)}
+table.data input.gap{min-width:60px;width:70px}
+
+/* outline cards */
+.sent{border-left:5px solid var(--teal);position:relative}
+.sent .para{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--teal)}
+.sent.ov{border-left-color:#7a5bb5}.sent.ov .para{color:#7a5bb5}
+.sent.b2{border-left-color:var(--orange)}.sent.b2 .para{color:var(--orange)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px}
+.note{background:#fafaf7;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.note .lbl{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.note .kw{font-weight:600;color:var(--navy);font-size:16px}
+.prompt-words{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.prompt-words span{background:#eef1f8;border-radius:6px;padding:2px 9px;font-size:14.5px;font-weight:600;color:var(--navy)}
+textarea{width:100%;font:inherit;font-size:16px;border:1.5px solid #b7c0d1;border-radius:10px;padding:10px 12px;min-height:74px;resize:vertical;color:var(--ink);background:#fff}
+textarea:focus{outline:none;border-color:var(--teal)}
+.model{display:none;margin-top:10px;background:#fffdf4;border:1px solid #ecdca0;border-radius:12px;padding:12px 16px;font-family:"Source Serif 4",Georgia,serif;font-size:17.5px;line-height:1.6}
+.model.open{display:block}
+.model .lbl{font-family:"Be Vietnam Pro",sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#a07c12;margin-bottom:2px}
+mark.g{background:var(--gram);padding:0 2px;border-radius:3px;color:inherit}
+mark.v{background:#d9efe9;padding:0 2px;border-radius:3px;color:inherit}
+.transfer{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
+.transfer .lbl{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+/* write */
+.wc{font-size:14px;color:var(--muted);margin-top:6px}
+.checklist label{display:flex;gap:10px;align-items:flex-start;padding:5px 0;font-size:15.5px;cursor:pointer}
+.checklist input{width:18px;height:18px;margin-top:4px;accent-color:var(--teal)}
+.essay p{font-family:"Source Serif 4",Georgia,serif;font-size:17.5px;line-height:1.7;margin:0 0 12px}
+.legend-k{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;margin-top:6px}
+.legend-k span{display:inline-flex;align-items:center;gap:6px}
+
+
+/* error hunt */
+.eh-stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.eh-list>li{margin:14px 0;font-size:18px;line-height:2.1}
+.tok{display:inline-block;padding:0 3px;margin:0 -1px;border-radius:7px;cursor:pointer;border:1.5px solid transparent;transition:background .15s,border-color .15s}
+.tok:hover{background:#eef1f8;border-color:#c4ccda}
+.tok.miss{animation:shake .45s;background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.tok.found{background:var(--orange-soft);border-color:var(--orange);color:#8a4a1d;text-decoration:line-through;text-decoration-thickness:2px;cursor:default}
+.tok.lock{cursor:default}.tok.lock:hover{background:none;border-color:transparent}
+.tok.found.lock:hover{background:var(--orange-soft);border-color:var(--orange)}
+.tok.answer{background:var(--bad-soft);border-color:var(--bad);color:var(--bad);text-decoration:line-through}
+.eh-fix{display:none;align-items:center;gap:6px;margin-left:6px;vertical-align:middle}
+.eh-fix.open{display:inline-flex}
+.eh-fix input.gap{width:170px;min-width:170px}
+.eh-list .pun{margin-left:-2px}
+.eh-fix .fix-arrow{color:var(--orange);font-weight:800}
+.eh-fb{display:block;font-size:14.5px;line-height:1.5;margin-top:2px}
+.eh-fb.ok{color:var(--ok)}.eh-fb.bad{color:var(--bad)}
+.eh-fb:empty{display:none}
+.pop{position:fixed;pointer-events:none;font-weight:800;font-size:20px;z-index:99;animation:floatUp .9s ease-out forwards}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+@keyframes floatUp{from{opacity:1;transform:translate(-50%,0)}to{opacity:0;transform:translate(-50%,-40px)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(196,122,69,.55)}100%{box-shadow:0 0 0 12px rgba(196,122,69,0)}}
+.tok.found.just{animation:pulse .6s}
+@media print{.eh-fix{display:inline-flex!important}.tok{border:none!important;background:none!important;color:#000!important;text-decoration:none!important}.eh-stats,.eh-fb{display:none!important}}
+svg text{font-family:"Be Vietnam Pro","Segoe UI",Arial,sans-serif}
+.foot{margin-top:40px;text-align:center;color:var(--muted);font-size:13.5px}
+
+@media (max-width:760px){.grid2{grid-template-columns:1fr}.top h1{font-size:24px}}
+
+
+/* ===== two-pane layout ===== */
+html,body{height:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",Arial,sans-serif;font-size:17px;line-height:1.6;overflow:hidden}
+.app{display:grid;grid-template-columns:minmax(380px,41%) 1fr;height:100vh}
+.left{background:#fff;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:12px;overflow-y:auto;padding:16px 18px}
+.right{overflow-y:auto;padding:4px 30px 90px;scroll-behavior:smooth}
+.right section.part{margin-top:26px}
+.brand{background:var(--navy);color:#fff;border-radius:14px;padding:14px 18px}
+.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.75;font-weight:600}
+.kicker.dark{color:var(--muted);opacity:1}
+.brand-title{font-size:22px;font-weight:800;line-height:1.25}
+.brand-title span{color:#f2b98d}
+.student{display:flex;align-items:center;gap:6px;margin-top:8px;font-size:14.5px;font-weight:600;background:rgba(255,255,255,.1);border-radius:10px;padding:5px 10px}
+.student .dot{opacity:.6}
+.timer{font-variant-numeric:tabular-nums;background:rgba(255,255,255,.16);border-radius:8px;padding:1px 8px}
+.left .card.task{margin:0;padding:14px 16px}
+.left .task .prompt{font-size:16px;line-height:1.5}
+.prog{border:1px solid var(--line);border-radius:14px;padding:10px 12px}
+.prog-head{display:flex;justify-content:space-between;align-items:center;font-size:14.5px;margin-bottom:6px}
+.prog-head .pill{padding:3px 10px;font-size:13.5px}
+.prog-chips{display:flex;flex-wrap:wrap;gap:6px}
+.pc{font:inherit;font-size:13px;font-weight:700;border:1.5px solid var(--line);background:#fff;color:var(--muted);border-radius:8px;padding:3px 9px;cursor:pointer}
+.pc:hover{border-color:var(--navy);color:var(--navy)}
+.pc.done{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.pc.part{border-color:var(--orange);color:var(--orange);background:var(--orange-soft)}
+.spacer{flex:1}
+.pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600}
+.pill b{color:var(--teal)}
+button.b.big{font-size:17px;padding:12px 26px;border-radius:12px}
+button.b.small{font-size:13px;padding:6px 12px}
+button.b:disabled{opacity:.5;cursor:not-allowed}
+.btns.center{justify-content:center}
+.corr{display:inline-block;margin-left:6px;font-size:14.5px;font-weight:700;color:var(--ok);background:var(--ok-soft);border-radius:6px;padding:0 8px}
+input:disabled,select:disabled{opacity:1;cursor:not-allowed}
+textarea[readonly]{background:#f6f7fa;color:#3d4760}
+.need{animation:shake .45s;border-color:var(--bad)!important}
+.hint{font-size:14px;color:var(--bad);font-weight:600;margin-top:6px;min-height:0}
+.card.final{border:2px solid var(--orange);background:#fffaf5}
+
+/* overlays */
+.overlay{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:24px;overflow:auto}
+.overlay.on{display:flex}
+.gate{background:var(--paper)}
+.fswarn{background:rgba(29,43,79,.88);z-index:120}
+.result-ov{background:rgba(246,244,239,.97);align-items:flex-start}
+.gate-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 34px;max-width:560px;width:100%;box-shadow:0 20px 50px rgba(29,43,79,.12)}
+.gate-card.center{text-align:center}
+.gate-card.center h2{color:var(--navy);font-size:24px;line-height:1.35;margin:10px 0}
+.gate-card.wide{max-width:820px;margin:auto}
+.gate-title{margin:4px 0 6px;font-size:28px;color:var(--navy);line-height:1.2}
+.fld{display:block;font-weight:700;color:var(--navy);margin-top:14px;font-size:15px}
+.fld input{display:block;width:100%;margin-top:5px;font:inherit;font-size:18px;font-weight:600;padding:10px 14px;border:1.5px solid #b7c0d1;border-radius:10px;color:var(--navy)}
+.fld input:focus{outline:none;border-color:var(--teal);background:var(--teal-soft)}
+.gate-err{color:var(--bad);font-weight:600;font-size:14.5px;min-height:22px;margin-top:6px}
+.rules{font-size:14.5px;color:var(--ink);padding-left:20px;margin:6px 0 18px}
+.rules li{margin:4px 0}
+.gate .b.big{width:100%}
+.res-score{font-size:72px;font-weight:800;color:var(--teal);line-height:1;margin:10px 0 14px}
+.res-score small{font-size:32px}
+.res-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.res-grid div{border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:14px;color:var(--muted)}
+.res-grid b{display:block;font-size:20px;color:var(--navy)}
+.send{margin-top:16px;font-weight:700;font-size:15px;padding:10px 14px;border-radius:10px;background:#eef1f8;color:var(--navy)}
+.send.ok{background:var(--ok-soft);color:var(--ok)}
+.send.bad{background:var(--bad-soft);color:var(--bad)}
+.mt{margin-top:22px;color:var(--navy)}
+.result-ov .essay p{font-size:16.5px}
+
+@media (max-width:900px){
+  body{overflow:auto}
+  .app{display:block;height:auto}
+  .left{overflow:visible}
+  .right{overflow:visible;padding:4px 14px 80px}
+}
+
+.left .card.task{flex:1;display:flex;flex-direction:column;min-height:0}
+.left #chart{flex:1;min-height:220px;width:100%}
+.result-ov .essay{margin-top:22px}
+.result-ov .essay .lbl{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#a07c12;margin-bottom:6px}
+
+</style>
+</head>
+<body>
+
+<!-- ===== GATE: name + class ===== -->
+<div class="overlay gate" id="gate">
+  <div class="gate-card">
+    <div class="kicker dark">Week 16 · IELTS Writing Task 1 · Bar chart</div>
+    <h1 class="gate-title">Online shopping in Australia</h1>
+    <p class="vn" id="gateNote">Con nhập họ tên và lớp trước khi bắt đầu làm bài.</p>
+    <label class="fld">Họ và tên<input id="inName" autocomplete="name"></label>
+    <label class="fld">Lớp<input id="inClass"></label>
+    <div class="gate-err" id="gateErr"></div>
+    <ul class="rules">
+      <li>Bài làm mở <b>toàn màn hình</b>. Thầy Độ đề nghị không thoát màn hình trong khi làm bài.</li>
+      <li>Mỗi phần chỉ được <b>nộp một lần</b>. Nộp xong sẽ hiện đáp án đúng.</li>
+      <li>Ở Part C, con phải <b>tự viết câu trước</b> rồi mới được xem câu mẫu.</li>
+      <li>Bài làm được lưu tự động trên máy này. Lỡ tắt trang thì mở lại và bấm "Tiếp tục".</li>
+    </ul>
+    <button class="b warm big" id="btnStart" onclick="startTest()">Bắt đầu làm bài</button>
+  </div>
+</div>
+
+<!-- ===== full-screen warning ===== -->
+<div class="overlay fswarn" id="fsWarn">
+  <div class="gate-card center">
+    <svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="12" width="48" height="34" rx="4" fill="none" stroke="#c47a45" stroke-width="4"/><path d="M24 54h16M32 46v8" stroke="#c47a45" stroke-width="4" stroke-linecap="round"/><path d="M20 22v-4h4M44 22v-4h-4M20 36v4h4M44 36v4h-4" stroke="#1d2b4f" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+    <h2>Thầy Độ đề nghị không thoát màn hình và tiếp tục làm bài.</h2>
+    <p class="vn">Số lần thoát màn hình và thời gian thoát được ghi lại trong bài nộp.</p>
+    <button class="b warm big" onclick="goFS(true)">Quay lại toàn màn hình</button>
+  </div>
+</div>
+
+<!-- ===== result ===== -->
+<div class="overlay result-ov" id="resultOv">
+  <div class="gate-card wide">
+    <div class="kicker dark">Kết quả · Week 16 Writing Task 1</div>
+    <h1 class="gate-title" id="resName"></h1>
+    <div class="res-score"><span id="resPct">0</span><small>%</small></div>
+    <div class="res-grid" id="resGrid"></div>
+    <div class="send" id="sendStatus"></div>
+    <div class="btns center"><button class="b ghost" id="btnResend" onclick="sendResult()" style="display:none">Gửi lại</button><button class="b" onclick="closeResult()">Xem lại bài làm</button></div>
+        <div class="essay">
+      <div class="lbl">Model answer · 201 words</div>
+      <p>The bar chart compares the shares of Australian internet users in six age groups who made purchases online in 2007 and 2009.</p>
+      <p>Overall, online shopping participation increased across all six age groups. Besides, the most substantial rise was among people aged 36–45, who overtook those from 26 to 35 to become the most active online shoppers by 2009. Internet users aged 65 and over were the least likely to buy goods online in both years.</p>
+      <p>With regard to the three youngest age groups, around 31% of internet users aged 26–35 used the internet to shop in 2007, compared with 26% of those aged 36–45. Over the next two years, the former figure edged up to 33%, while the latter surged by 12 percentage points to 38%, the highest figure on the chart. Among 15–25-year-olds, the share who shopped online rose more modestly, from 20% to 23%.</p>
+      <p>Looking at the remaining age cohorts, the proportion of internet users who made online purchases rose from 22% to 27% among 46–55-year-olds and from 12% to 18% among those aged 56–65. The figure for the oldest group more than doubled, climbing from roughly 5% to 12%, the same level recorded by 56–65-year-olds two years earlier.</p>
+    </div>
+  
+    <div class="btns center"><button class="b ghost small" onclick="newAttempt()">Làm bài lần mới</button></div>
+  </div>
+</div>
+
+<div class="app" id="app">
+  <aside class="left">
+    <div class="brand">
+      <div class="kicker">Week 16 · IELTS Writing Task 1</div>
+      <div class="brand-title">Online shopping <span>by age group</span></div>
+      <div class="student"><span id="stName">—</span><span class="dot">·</span><span id="stClass">—</span><span class="spacer"></span><span class="timer" id="timer">00:00</span></div>
+    </div>
+    <div class="card task">
+<div class="prompt">The chart below shows the percentage of internet users who shopped online in Australia by age group, 2007–2009.<br>
+    <em>Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</em> <span class="vn">(Write at least 150 words.)</span></div>
+    <svg id="chart" viewBox="0 0 700 500" width="100%" role="img" aria-label="Bar chart: internet users who shopped online in Australia by age group, 2007 and 2009"></svg>
+    <div class="legend-k">
+      <span><svg width="16" height="16"><rect width="16" height="16" rx="3" fill="#2f7d6d"/></svg>2007</span>
+      <span><svg width="16" height="16"><rect width="16" height="16" rx="3" fill="#c98a5a"/></svg>2009</span>
+    </div>
+  
+    </div>
+    <div class="prog">
+      <div class="prog-head"><b>Tiến độ</b><span class="pill">Điểm: <b id="score">0</b> / <b id="total">0</b></span></div>
+      <div class="prog-chips" id="progChips"></div>
+    </div>
+  </aside>
+
+  <main class="right" id="right">
+<!-- ================= PART A ================= -->
+<section class="part" id="A">
+  <div class="part-head"><div class="part-tag">A</div><div><h2>Vocabulary scaffold</h2><p>Từ vựng con cần để viết bài này — học xong mới lập dàn ý.</p></div></div>
+
+  <!-- A1 -->
+  <div class="card chk" id="A1">
+    <h3>A1 · Paraphrase the task</h3>
+    <div class="vn">Chọn cách diễn đạt lại (paraphrase) cho từng cụm trong đề bài.</div>
+    <table class="match">
+      <tr><td>shows</td><td class="arrow">→</td><td><select data-k="Y29tcGFyZXM="><option value="">— chọn —</option><option>compares</option><option>the shares of</option><option>made purchases online</option><option>in six age groups</option><option>in 2007 and 2009</option></select></td></tr>
+      <tr><td>the percentage of</td><td class="arrow">→</td><td><select data-k="dGhlIHNoYXJlcyBvZg=="><option value="">— chọn —</option><option>compares</option><option>the shares of</option><option>made purchases online</option><option>in six age groups</option><option>in 2007 and 2009</option></select></td></tr>
+      <tr><td>shopped online</td><td class="arrow">→</td><td><select data-k="bWFkZSBwdXJjaGFzZXMgb25saW5l"><option value="">— chọn —</option><option>compares</option><option>the shares of</option><option>made purchases online</option><option>in six age groups</option><option>in 2007 and 2009</option></select></td></tr>
+      <tr><td>by age group</td><td class="arrow">→</td><td><select data-k="aW4gc2l4IGFnZSBncm91cHM="><option value="">— chọn —</option><option>compares</option><option>the shares of</option><option>made purchases online</option><option>in six age groups</option><option>in 2007 and 2009</option></select></td></tr>
+      <tr><td>2007–2009</td><td class="arrow">→</td><td><select data-k="aW4gMjAwNyBhbmQgMjAwOQ=="><option value="">— chọn —</option><option>compares</option><option>the shares of</option><option>made purchases online</option><option>in six age groups</option><option>in 2007 and 2009</option></select></td></tr>
+    </table>
+    <div class="rule"><b>Thêm vào sổ tay:</b> the percentage = the share = the proportion = the figure &nbsp;|&nbsp; shop online = make purchases online = buy goods online = use the internet to shop</div>
+    <div class="btns"><button class="b subbtn" onclick="submitSec('A1')">Nộp phần này</button><span class="result"></span></div>
+  </div>
+
+  <!-- A2 -->
+  <div class="card chk" id="A2">
+    <h3>A2 · How big is the change?</h3>
+    <div class="vn">Động từ chỉ xu hướng có "độ mạnh" khác nhau. Nhìn thang dưới đây, rồi chọn động từ hợp với mỗi nhóm tuổi.</div>
+    <svg viewBox="0 0 900 168" width="100%" aria-label="Scale of change verbs from small to large">
+      <defs><marker id="ah" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="8" refY="8" orient="auto"><path d="M0,0 L16,8 L0,16 z" fill="context-stroke"/></marker></defs>
+      <line x1="20" y1="132" x2="880" y2="132" stroke="#d9dde6" stroke-width="2"/>
+      <g stroke="#2f7d6d" stroke-width="5" fill="none" stroke-linecap="round">
+        <path d="M40 112 L150 104" marker-end="url(#ah)"/>
+        <path d="M215 112 L325 94" marker-end="url(#ah)"/>
+        <path d="M390 112 L500 80"  marker-end="url(#ah)"/>
+        <path d="M565 116 L655 30"  marker-end="url(#ah)" stroke="#c47a45"/>
+      </g>
+      <g fill="#c47a45"><rect x="740" y="92" width="34" height="24" rx="4" opacity=".55"/><rect x="790" y="44" width="34" height="72" rx="4"/></g>
+      <text x="757" y="88" font-size="13" text-anchor="middle" fill="#64708a">5%</text>
+      <text x="807" y="38" font-size="13" text-anchor="middle" fill="#64708a">12%</text>
+      <g font-size="16" font-weight="700" fill="#1d2b4f" text-anchor="middle">
+        <text x="95" y="158">edged up</text><text x="270" y="158">rose modestly</text><text x="445" y="158">rose</text><text x="610" y="158">surged</text><text x="782" y="158">more than doubled</text>
+      </g>
+      <g font-size="13" fill="#64708a" text-anchor="middle">
+        <text x="95" y="90">rất nhẹ</text><text x="270" y="80">nhẹ</text><text x="445" y="64">vừa</text><text x="610" y="20">rất mạnh</text>
+      </g>
+    </svg>
+    <table class="match">
+      <tr><td>26–35: 31% → 33% <span class="vn">(+2)</span></td><td class="arrow">→</td><td><select data-k="ZWRnZWQgdXA="><option value="">— chọn —</option><option>edged up</option><option>rose more modestly</option><option>rose</option><option>surged</option><option>more than doubled</option></select></td></tr>
+      <tr><td>15–25: 20% → 23% <span class="vn">(+3)</span></td><td class="arrow">→</td><td><select data-k="cm9zZSBtb3JlIG1vZGVzdGx5"><option value="">— chọn —</option><option>edged up</option><option>rose more modestly</option><option>rose</option><option>surged</option><option>more than doubled</option></select></td></tr>
+      <tr><td>46–55: 22% → 27% <span class="vn">(+5)</span></td><td class="arrow">→</td><td><select data-k="cm9zZQ=="><option value="">— chọn —</option><option>edged up</option><option>rose more modestly</option><option>rose</option><option>surged</option><option>more than doubled</option></select></td></tr>
+      <tr><td>36–45: 26% → 38% <span class="vn">(+12)</span></td><td class="arrow">→</td><td><select data-k="c3VyZ2Vk"><option value="">— chọn —</option><option>edged up</option><option>rose more modestly</option><option>rose</option><option>surged</option><option>more than doubled</option></select></td></tr>
+      <tr><td>65+: 5% → 12% <span class="vn">(×2.4)</span></td><td class="arrow">→</td><td><select data-k="bW9yZSB0aGFuIGRvdWJsZWQ="><option value="">— chọn —</option><option>edged up</option><option>rose more modestly</option><option>rose</option><option>surged</option><option>more than doubled</option></select></td></tr>
+    </table>
+    <div class="btns"><button class="b subbtn" onclick="submitSec('A2')">Nộp phần này</button><span class="result"></span></div>
+  </div>
+
+  <!-- A3 -->
+  <div class="card chk" id="A3">
+    <h3>A3 · Numbers: <em>from … to</em>, <em>by</em>, <em>percentage points</em></h3>
+    <div class="rule">
+      <div class="pat">rose <u>from</u> 26% <u>to</u> 38% &nbsp;=&nbsp; rose <u>by</u> 12 percentage points</div>
+      <b>to</b> = con số đích đến &nbsp;·&nbsp; <b>by</b> = mức chênh lệch &nbsp;·&nbsp; 38% − 26% = 12 <b>percentage points</b> (điểm phần trăm), <u>không</u> phải "12%".<br>
+      Số đọc ước lượng từ biểu đồ → thêm <b>around / roughly / approximately</b>.
+    </div>
+    <ol class="qs">
+      <li>Among 46–55-year-olds, the figure rose <input class="gap w-s" data-k="ZnJvbQ=="> 22% <input class="gap w-s" data-k="dG8="> 27%.</li>
+      <li>The share of 36–45-year-olds surged <input class="gap w-s" data-k="Ynk="> 12 percentage points.</li>
+      <li>The figure for 36–45-year-olds surged by 12 <input class="gap w-l" data-k="cGVyY2VudGFnZSBwb2ludHM="> to 38%.</li>
+      <li>The oldest group's figure climbed from <input class="gap" data-k="cm91Z2hseXxhcm91bmR8YXBwcm94aW1hdGVseXxhYm91dA=="> 5% to 12%. <span class="vn">(khoảng)</span></li>
+      <li>Over the next two years, the 26–35 figure edged up <input class="gap w-s" data-k="dG8="> 33%.</li>
+    </ol>
+    <div class="btns"><button class="b subbtn" onclick="submitSec('A3')">Nộp phần này</button><span class="result"></span></div>
+  </div>
+
+  <!-- A4 -->
+  <div class="card chk" id="A4">
+    <h3>A4 · Naming the age groups</h3>
+    <div class="vn">Đừng lặp "people aged 36–45" cả bài. Có nhiều cách gọi một nhóm tuổi:</div>
+    <div class="bank">
+      <span class="chip static">people aged 36–45</span><span class="chip static">internet users aged 36–45</span><span class="chip static">36–45-year-olds</span><span class="chip static">those aged 36–45</span><span class="chip static">the oldest group</span><span class="chip static">the three youngest age groups</span><span class="chip static">the remaining age cohorts</span>
+    </div>
+    <ol class="qs">
+      <li class="radio-q" data-k="MTXigJMyNS15ZWFyLW9sZHM=">Among <b>______</b>, the share rose from 20% to 23%.
+        <div class="opts"><label><input type="radio" name="a4a" value="15–25-year-olds"><span>15–25-year-olds</span></label><label><input type="radio" name="a4a" value="15–25-years-olds"><span>15–25-years-olds</span></label><label><input type="radio" name="a4a" value="15–25-year-old"><span>15–25-year-old</span></label></div></li>
+      <li class="radio-q" data-k="YWdlZA==">Internet users <b>______</b> 65 and over were the least likely to buy goods online.
+        <div class="opts"><label><input type="radio" name="a4b" value="aged"><span>aged</span></label><label><input type="radio" name="a4b" value="age"><span>age</span></label><label><input type="radio" name="a4b" value="ages"><span>ages</span></label></div></li>
+      <li class="radio-q" data-k="dGhvc2U=">31% of internet users aged 26–35 shopped online, compared with 26% of <b>______</b> aged 36–45.
+        <div class="opts"><label><input type="radio" name="a4c" value="those"><span>those</span></label><label><input type="radio" name="a4c" value="that"><span>that</span></label><label><input type="radio" name="a4c" value="these"><span>these</span></label></div></li>
+    </ol>
+    <div class="rule"><b>Ghi nhớ:</b> "year" trong <b>15–25-year-olds</b> không có "s" (nó đóng vai trò tính từ ghép); chỉ <b>olds</b> mới có "s". &nbsp;<b>those</b> = "internet users" (thay thế danh từ số nhiều đã nhắc).</div>
+    <div class="btns"><button class="b subbtn" onclick="submitSec('A4')">Nộp phần này</button><span class="result"></span></div>
+  </div>
+
+  <!-- A5 -->
+  <div class="card chk" id="A5">
+    <h3>A5 · Comparing &amp; ranking</h3>
+    <div class="vn">Bấm vào ô trống rồi bấm từ trong ngân hàng từ (hoặc tự gõ).</div>
+    <div class="bank" data-bank>
+      <button class="chip">overtook</button><button class="chip">the most active</button><button class="chip">the least likely</button><button class="chip">former</button><button class="chip">latter</button><button class="chip">the highest figure</button>
+    </div>
+    <ol class="qs">
+      <li>By 2009, the 36–45 group <input class="gap" data-k="b3ZlcnRvb2s="> the 26–35 group. <span class="vn">(vượt lên)</span></li>
+      <li>People aged 36–45 became <input class="gap w-l" data-k="dGhlIG1vc3QgYWN0aXZl"> online shoppers in 2009.</li>
+      <li>Internet users aged 65 and over were <input class="gap w-l" data-k="dGhlIGxlYXN0IGxpa2VseQ=="> to buy goods online.</li>
+      <li>26–35: 33% &nbsp;|&nbsp; 36–45: 38% → The <input class="gap" data-k="Zm9ybWVy"> figure edged up to 33%, while the <input class="gap" data-k="bGF0dGVy"> surged to 38%.</li>
+      <li>38% was <input class="gap w-l" data-k="dGhlIGhpZ2hlc3QgZmlndXJl"> on the chart.</li>
+    </ol>
+    <div class="rule"><b>the former</b> = cái được nhắc trước &nbsp;·&nbsp; <b>the latter</b> = cái được nhắc sau.</div>
+    <div class="btns"><button class="b subbtn" onclick="submitSec('A5')">Nộp phần này</button><span class="result"></span></div>
+  </div>
+</section>
+
+<!-- ================= PART B ================= -->
+<section class="part" id="B">
+  <div class="part-head"><div class="part-tag">B</div><div><h2>Read the data</h2><p>Đọc số trước, tìm điểm nổi bật, rồi mới chia đoạn.</p></div></div>
+
+  <div class="card chk" id="B1">
+    <h3>B1 · Complete the table</h3>
+    <div class="vn">Đọc biểu đồ, điền số năm 2009 và mức thay đổi (điểm phần trăm).</div>
+    <table class="data">
+      <tr><th>Age group</th><th>2007</th><th>2009</th><th>Change</th></tr>
+      <tr><td>15–25</td><td>20%</td><td><input class="gap" data-num data-k="MjM="></td><td><input class="gap" data-num data-k="Mw=="></td></tr>
+      <tr><td>26–35</td><td>31%</td><td><input class="gap" data-num data-k="MzM="></td><td><input class="gap" data-num data-k="Mg=="></td></tr>
+      <tr><td>36–45</td><td>26%</td><td><input class="gap" data-num data-k="Mzg="></td><td><input class="gap" data-num data-k="MTI="></td></tr>
+      <tr><td>46–55</td><td>22%</td><td><input class="gap" data-num data-k="Mjc="></td><td><input class="gap" data-num data-k="NQ=="></td></tr>
+      <tr><td>56–65</td><td>12%</td><td><input class="gap" data-num data-k="MTg="></td><td><input class="gap" data-num data-k="Ng=="></td></tr>
+      <tr><td>65+</td><td>≈5%</td><td><input class="gap" data-num data-k="MTI="></td><td><input class="gap" data-num data-k="Nw=="></td></tr>
+    </table>
+    <div class="btns"><button class="b subbtn" onclick="submitSec('B1')">Nộp phần này</button><span class="result"></span></div>
+  </div>
+
+  <div class="card chk" id="B2">
+    <h3>B2 · Find the key features <span class="vn">(→ dùng cho Overview)</span></h3>
+    <ol class="qs">
+      <li class="radio-q" data-k="YWxsIHNpeCBncm91cHM=">What happened to online shopping between 2007 and 2009?
+        <div class="opts"><label><input type="radio" name="b2a" value="all six groups"><span>It rose in all six groups.</span></label><label><input type="radio" name="b2a" value="only young"><span>It rose in young groups only.</span></label><label><input type="radio" name="b2a" value="fell old"><span>It fell in the oldest group.</span></label></div></li>
+      <li class="radio-q" data-k="MzYtNDU=">Which group had the biggest rise?
+        <div class="opts"><label><input type="radio" name="b2b" value="26-35"><span>26–35</span></label><label><input type="radio" name="b2b" value="36-45"><span>36–45</span></label><label><input type="radio" name="b2b" value="65+"><span>65+</span></label></div></li>
+      <li class="radio-q" data-k="MjYtMzU=">Which group was No.1 in 2007 but was overtaken in 2009?
+        <div class="opts"><label><input type="radio" name="b2c" value="15-25"><span>15–25</span></label><label><input type="radio" name="b2c" value="26-35"><span>26–35</span></label><label><input type="radio" name="b2c" value="46-55"><span>46–55</span></label></div></li>
+      <li class="radio-q" data-k="NjUr">Which group was the lowest in both years?
+        <div class="opts"><label><input type="radio" name="b2d" value="56-65"><span>56–65</span></label><label><input type="radio" name="b2d" value="65+"><span>65+</span></label><label><input type="radio" name="b2d" value="15-25"><span>15–25</span></label></div></li>
+    </ol>
+    <div class="btns"><button class="b subbtn" onclick="submitSec('B2')">Nộp phần này</button><span class="result"></span></div>
+  </div>
+
+  <div class="card chk" id="B3">
+    <h3>B3 · Group the data into two body paragraphs</h3>
+    <div class="vn">Chia 6 nhóm tuổi vào Body 1 hoặc Body 2. Gợi ý: đặt câu chuyện "vượt lên" (36–45 vượt 26–35) vào cùng một đoạn.</div>
+    <table class="match">
+      <tr><td>15–25</td><td class="arrow">→</td><td><select data-k="Qm9keSAx"><option value="">— chọn —</option><option>Body 1</option><option>Body 2</option></select></td></tr>
+      <tr><td>26–35</td><td class="arrow">→</td><td><select data-k="Qm9keSAx"><option value="">— chọn —</option><option>Body 1</option><option>Body 2</option></select></td></tr>
+      <tr><td>36–45</td><td class="arrow">→</td><td><select data-k="Qm9keSAx"><option value="">— chọn —</option><option>Body 1</option><option>Body 2</option></select></td></tr>
+      <tr><td>46–55</td><td class="arrow">→</td><td><select data-k="Qm9keSAy"><option value="">— chọn —</option><option>Body 1</option><option>Body 2</option></select></td></tr>
+      <tr><td>56–65</td><td class="arrow">→</td><td><select data-k="Qm9keSAy"><option value="">— chọn —</option><option>Body 1</option><option>Body 2</option></select></td></tr>
+      <tr><td>65+</td><td class="arrow">→</td><td><select data-k="Qm9keSAy"><option value="">— chọn —</option><option>Body 1</option><option>Body 2</option></select></td></tr>
+    </table>
+    <div class="rule"><b>Body 1</b> = the three youngest age groups (có 26–35 và 36–45 "đổi ngôi") &nbsp;·&nbsp; <b>Body 2</b> = the remaining age cohorts (46–55, 56–65, 65+).</div>
+    <div class="btns"><button class="b subbtn" onclick="submitSec('B3')">Nộp phần này</button><span class="result"></span></div>
+  </div>
+</section>
+
+<!-- ================= PART C ================= -->
+<section class="part" id="C">
+  <div class="part-head"><div class="part-tag">C</div><div><h2>Outline + grammar, sentence by sentence</h2><p>Mỗi câu: đọc dàn ý → học 1 điểm ngữ pháp → <b>tự viết câu trước</b> → bấm "Xem câu mẫu" để so sánh (câu của con sẽ được khoá lại) → luyện thêm.</p></div></div>
+
+  <!-- C1 -->
+  <div class="card sent chk" id="C1">
+    <div class="para">Introduction · Sentence 1</div>
+    <div class="grid2">
+      <div class="note"><div class="lbl">Outline</div><div class="kw">Paraphrase the task: chart → compares → shares → internet users → 6 age groups → made purchases online → 2007 and 2009</div></div>
+      <div class="rule" style="margin:0"><div class="pat">N (người) + <mark class="g">who</mark> + V-ed</div>Mệnh đề quan hệ với <b>who</b> bổ nghĩa cho danh từ chỉ người (internet users).</div>
+    </div>
+    <div class="prompt-words"><span>bar chart</span><span>compare</span><span>shares</span><span>Australian internet users</span><span>six age groups</span><span>who</span><span>make purchases online</span><span>2007 and 2009</span></div>
+    <textarea placeholder="Con viết câu mở bài ở đây…"></textarea>
+    <div class="model"><div class="lbl">Model sentence</div>The bar chart compares the shares of Australian internet users in six age groups <mark class="g">who made purchases online</mark> in 2007 and 2009.</div>
+    <div class="transfer"><div class="lbl">Practice</div>
+      <ol class="qs"><li>The chart compares the proportion of teenagers <input class="gap w-s" data-k="d2hv"> used social media in 2010 and 2020.</li></ol>
+    </div>
+    <div class="btns"><button class="b warm" onclick="showModel(this)">Xem câu mẫu</button><button class="b subbtn" onclick="submitSec('C1')">Nộp phần này</button><span class="result"></span></div>
+  </div>
+
+  <!-- C2 -->
+  <div class="card sent ov chk" id="C2">
+    <div class="para">Overview · Sentence 1</div>
+    <div class="grid2">
+      <div class="note"><div class="lbl">Outline</div><div class="kw">Overall → ALL 6 groups ↑</div></div>
+      <div class="rule" style="margin:0"><div class="pat"><mark class="g">Overall,</mark> + S + V (past simple) + <mark class="g">across all</mark> + N</div>Overview nói xu hướng chung, <b>không</b> đưa số liệu. Năm đã qua → thì quá khứ đơn.</div>
+    </div>
+    <div class="prompt-words"><span>Overall</span><span>online shopping participation</span><span>increase</span><span>across</span><span>all six age groups</span></div>
+    <textarea placeholder="Con viết câu ở đây…"></textarea>
+    <div class="model"><div class="lbl">Model sentence</div><mark class="g">Overall,</mark> online shopping participation <mark class="g">increased</mark> <mark class="g">across all</mark> six age groups.</div>
+    <div class="transfer"><div class="lbl">Practice</div>
+      <ol class="qs"><li>Overall, the figures for all six age groups <input class="gap w-s" data-k="d2VudA=="> (go) up between 2007 and 2009.</li></ol>
+    </div>
+    <div class="btns"><button class="b warm" onclick="showModel(this)">Xem câu mẫu</button><button class="b subbtn" onclick="submitSec('C2')">Nộp phần này</button><span class="result"></span></div>
+  </div>
+
+  <!-- C3 -->
+  <div class="card sent ov chk" id="C3">
+    <div class="para">Overview · Sentence 2</div>
+    <div class="grid2">
+      <div class="note"><div class="lbl">Outline</div><div class="kw">Biggest rise: 36–45 → overtook 26–35 → most active shoppers (2009)</div></div>
+      <div class="rule" style="margin:0"><div class="pat">N, <mark class="g">who</mark> + V-ed …, <mark class="g">to become</mark> …</div>Mệnh đề quan hệ <b>không xác định</b> (có dấu phẩy) → dùng <b>who</b>, không dùng <b>that</b>. <b>to + V</b> chỉ kết quả: "vượt lên <i>để trở thành</i>…".</div>
+    </div>
+    <div class="prompt-words"><span>Besides</span><span>the most substantial rise</span><span>people aged 36–45</span><span>, who</span><span>overtake</span><span>those from 26 to 35</span><span>to become</span><span>the most active online shoppers</span></div>
+    <textarea placeholder="Con viết câu ở đây…"></textarea>
+    <div class="model"><div class="lbl">Model sentence</div>Besides, <mark class="v">the most substantial rise</mark> was among people aged 36–45, <mark class="g">who overtook</mark> those from 26 to 35 <mark class="g">to become</mark> the most active online shoppers by 2009.</div>
+    <div class="transfer"><div class="lbl">Practice</div>
+      <ol class="qs"><li>Smartphone users, <input class="gap w-s" data-k="d2hv"> overtook laptop users, became the largest group of online shoppers.</li>
+      <li>The 36–45 group overtook the 26–35 group <input class="gap w-s" data-k="dG8="> become the leading group.</li></ol>
+    </div>
+    <div class="btns"><button class="b warm" onclick="showModel(this)">Xem câu mẫu</button><button class="b subbtn" onclick="submitSec('C3')">Nộp phần này</button><span class="result"></span></div>
+  </div>
+
+  <!-- C4 -->
+  <div class="card sent ov chk" id="C4">
+    <div class="para">Overview · Sentence 3</div>
+    <div class="grid2">
+      <div class="note"><div class="lbl">Outline</div><div class="kw">65+ → lowest in both years</div></div>
+      <div class="rule" style="margin:0"><div class="pat">N <mark class="g">aged</mark> … + be + <mark class="g">the least likely to</mark> + V</div><b>aged 65 and over</b> = (who were) aged… — mệnh đề quan hệ rút gọn. <b>the most / least likely to + V</b> = khả năng cao nhất / thấp nhất làm gì.</div>
+    </div>
+    <div class="prompt-words"><span>internet users</span><span>aged 65 and over</span><span>the least likely</span><span>buy goods online</span><span>in both years</span></div>
+    <textarea placeholder="Con viết câu ở đây…"></textarea>
+    <div class="model"><div class="lbl">Model sentence</div>Internet users <mark class="g">aged</mark> 65 and over were <mark class="g">the least likely to buy</mark> goods online in both years.</div>
+    <div class="transfer"><div class="lbl">Practice</div>
+      <ol class="qs"><li>In 2009, people aged 36–45 were the most likely <input class="gap" data-k="dG8gc2hvcA=="> (shop) online.</li></ol>
+    </div>
+    <div class="btns"><button class="b warm" onclick="showModel(this)">Xem câu mẫu</button><button class="b subbtn" onclick="submitSec('C4')">Nộp phần này</button><span class="result"></span></div>
+  </div>
+
+  <!-- C5 -->
+  <div class="card sent chk" id="C5">
+    <div class="para">Body 1 · Sentence 1</div>
+    <div class="grid2">
+      <div class="note"><div class="lbl">Outline</div><div class="kw">2007: 26–35 = 31% vs 36–45 = 26%</div></div>
+      <div class="rule" style="margin:0"><div class="pat">X% of A …, <mark class="g">compared with</mark> Y% of <mark class="g">those</mark> aged …</div><b>compared with</b> + số liệu để so sánh trong cùng một câu. <b>those</b> thay cho "internet users" để khỏi lặp lại.</div>
+    </div>
+    <div class="prompt-words"><span>With regard to</span><span>the three youngest age groups</span><span>around 31%</span><span>internet users aged 26–35</span><span>use the internet to shop</span><span>2007</span><span>compared with</span><span>26%</span><span>36–45</span></div>
+    <textarea placeholder="Con viết câu ở đây…"></textarea>
+    <div class="model"><div class="lbl">Model sentence</div>With regard to the three youngest age groups, around 31% of internet users aged 26–35 used the internet to shop in 2007, <mark class="g">compared with</mark> 26% of <mark class="g">those</mark> aged 36–45.</div>
+    <div class="transfer"><div class="lbl">Practice</div>
+      <ol class="qs"><li>In 2007, 22% of people aged 46–55 shopped online, <input class="gap" data-k="Y29tcGFyZWQgd2l0aHxjb21wYXJlZCB0bw=="> 12% of <input class="gap w-s" data-k="dGhvc2U="> aged 56–65.</li></ol>
+    </div>
+    <div class="btns"><button class="b warm" onclick="showModel(this)">Xem câu mẫu</button><button class="b subbtn" onclick="submitSec('C5')">Nộp phần này</button><span class="result"></span></div>
+  </div>
+
+  <!-- C6 -->
+  <div class="card sent chk" id="C6">
+    <div class="para">Body 1 · Sentence 2</div>
+    <div class="grid2">
+      <div class="note"><div class="lbl">Outline</div><div class="kw">Next 2 years: 26–35 ↑ slightly → 33% &nbsp;|&nbsp; 36–45 ↑↑ +12 → 38% (highest)</div></div>
+      <div class="rule" style="margin:0"><div class="pat">The former + V, <mark class="g">while</mark> the latter + V <mark class="g">by</mark> … <mark class="g">to</mark> …, <mark class="g">the highest figure</mark></div><b>while</b> nối hai mệnh đề tương phản. Cụm danh từ sau dấu phẩy (<i>, the highest figure on the chart</i>) giải thích thêm cho 38%.</div>
+    </div>
+    <div class="prompt-words"><span>Over the next two years</span><span>the former figure</span><span>edge up</span><span>33%</span><span>while</span><span>the latter</span><span>surge</span><span>12 percentage points</span><span>38%</span><span>the highest figure</span></div>
+    <textarea placeholder="Con viết câu ở đây…"></textarea>
+    <div class="model"><div class="lbl">Model sentence</div>Over the next two years, the former figure edged up <mark class="g">to</mark> 33%, <mark class="g">while</mark> the latter surged <mark class="g">by</mark> 12 percentage points <mark class="g">to</mark> 38%, <mark class="g">the highest figure on the chart</mark>.</div>
+    <div class="transfer"><div class="lbl">Practice</div>
+      <ol class="qs"><li>The figure for 46–55-year-olds rose <input class="gap w-s" data-k="dG8="> 27%, <input class="gap w-s" data-k="d2hpbGV8d2hlcmVhcw=="> that for 56–65-year-olds increased <input class="gap w-s" data-k="Ynk="> 6 percentage points to 18%.</li></ol>
+    </div>
+    <div class="btns"><button class="b warm" onclick="showModel(this)">Xem câu mẫu</button><button class="b subbtn" onclick="submitSec('C6')">Nộp phần này</button><span class="result"></span></div>
+  </div>
+
+  <!-- C7 -->
+  <div class="card sent chk" id="C7">
+    <div class="para">Body 1 · Sentence 3</div>
+    <div class="grid2">
+      <div class="note"><div class="lbl">Outline</div><div class="kw">15–25: 20% → 23% (smaller rise)</div></div>
+      <div class="rule" style="margin:0"><div class="pat">Among <mark class="g">15–25-year-olds</mark>, … rose <mark class="g">more modestly</mark>, from … to …</div>Tính từ ghép <b>X-year-olds</b>. So sánh hơn của trạng từ: <b>more + adv</b> (modestly, sharply, slowly).</div>
+    </div>
+    <div class="prompt-words"><span>Among</span><span>15–25-year-olds</span><span>the share who shopped online</span><span>rise</span><span>more modestly</span><span>20% → 23%</span></div>
+    <textarea placeholder="Con viết câu ở đây…"></textarea>
+    <div class="model"><div class="lbl">Model sentence</div>Among <mark class="g">15–25-year-olds</mark>, the share who shopped online rose <mark class="g">more modestly</mark>, from 20% to 23%.</div>
+    <div class="transfer"><div class="lbl">Practice</div>
+      <ol class="qs"><li>Among 46–55-<input class="gap w-s" data-k="eWVhcg==">-olds, the figure rose more <input class="gap" data-k="c2xvd2x5"> (slow) than that of the 36–45 group.</li></ol>
+    </div>
+    <div class="btns"><button class="b warm" onclick="showModel(this)">Xem câu mẫu</button><button class="b subbtn" onclick="submitSec('C7')">Nộp phần này</button><span class="result"></span></div>
+  </div>
+
+  <!-- C8 -->
+  <div class="card sent b2 chk" id="C8">
+    <div class="para">Body 2 · Sentence 1</div>
+    <div class="grid2">
+      <div class="note"><div class="lbl">Outline</div><div class="kw">46–55: 22% → 27% &nbsp;|&nbsp; 56–65: 12% → 18%</div></div>
+      <div class="rule" style="margin:0"><div class="pat">… rose <mark class="g">from A to B</mark> among X <mark class="g">and from C to D</mark> among Y</div>Cấu trúc song song: dùng <b>một động từ</b> cho hai nhóm, không cần lặp "the proportion … rose".</div>
+    </div>
+    <div class="prompt-words"><span>Looking at</span><span>the remaining age cohorts</span><span>the proportion of internet users</span><span>who made online purchases</span><span>rise</span><span>46–55-year-olds</span><span>those aged 56–65</span></div>
+    <textarea placeholder="Con viết câu ở đây…"></textarea>
+    <div class="model"><div class="lbl">Model sentence</div>Looking at the remaining age cohorts, the proportion of internet users who made online purchases rose <mark class="g">from 22% to 27%</mark> among 46–55-year-olds <mark class="g">and from 12% to 18%</mark> among those aged 56–65.</div>
+    <div class="transfer"><div class="lbl">Practice</div>
+      <ol class="qs"><li>The share rose from 20% to 23% among 15–25-year-olds and <input class="gap w-s" data-k="ZnJvbQ=="> 31% <input class="gap w-s" data-k="dG8="> 33% among those aged 26–35.</li></ol>
+    </div>
+    <div class="btns"><button class="b warm" onclick="showModel(this)">Xem câu mẫu</button><button class="b subbtn" onclick="submitSec('C8')">Nộp phần này</button><span class="result"></span></div>
+  </div>
+
+  <!-- C9 -->
+  <div class="card sent b2 chk" id="C9">
+    <div class="para">Body 2 · Sentence 2</div>
+    <div class="grid2">
+      <div class="note"><div class="lbl">Outline</div><div class="kw">65+: ≈5% → 12% (×2+) = 56–65's level in 2007</div></div>
+      <div class="rule" style="margin:0"><div class="pat">S + V, <mark class="g">V-ing</mark> from … to …, the same level <mark class="g">recorded by</mark> …</div><b>V-ing</b> sau dấu phẩy thêm chi tiết cho hành động chính (không chia thì). <b>recorded by</b> = (which was) recorded by — mệnh đề quan hệ bị động rút gọn.</div>
+    </div>
+    <div class="prompt-words"><span>The figure for the oldest group</span><span>more than double</span><span>climb</span><span>roughly 5% → 12%</span><span>the same level</span><span>record</span><span>56–65-year-olds</span><span>two years earlier</span></div>
+    <textarea placeholder="Con viết câu ở đây…"></textarea>
+    <div class="model"><div class="lbl">Model sentence</div>The figure for the oldest group more than doubled, <mark class="g">climbing</mark> from roughly 5% to 12%, the same level <mark class="g">recorded by</mark> 56–65-year-olds two years earlier.</div>
+    <div class="transfer"><div class="lbl">Practice</div>
+      <ol class="qs"><li>The figure for 36–45-year-olds surged, <input class="gap" data-k="cmVhY2hpbmc="> (reach) 38% in 2009.</li>
+      <li>This was the highest level <input class="gap" data-k="cmVjb3JkZWQ="> (record) on the chart.</li></ol>
+    </div>
+    <div class="btns"><button class="b warm" onclick="showModel(this)">Xem câu mẫu</button><button class="b subbtn" onclick="submitSec('C9')">Nộp phần này</button><span class="result"></span></div>
+  </div>
+</section>
+
+<!-- ================= PART D ================= -->
+<section class="part" id="D">
+  <div class="part-head"><div class="part-tag">D</div><div><h2>Error hunt</h2><p>Mỗi câu có <b>một</b> từ sai. Con bấm vào từ sai → gõ cách sửa → bấm <b>Nộp bài</b>. Nếu từ đó <b>thừa</b> (phải bỏ đi), con gõ <b>x</b>.</p></div></div>
+  <div class="card chk" id="D1">
+    <div class="eh-stats"><span class="pill">Tìm được: <b id="ehFound">0</b> / <b id="ehTotal">0</b></span><span class="pill">Bấm nhầm: <b id="ehMiss" style="color:var(--bad)">0</b></span></div>
+    <ol class="qs eh-list" id="ehList"></ol>
+    <div class="btns"><button class="b warm" id="ehSubmit" onclick="ehSubmit()">Nộp bài</button><span class="result"></span></div>
+  </div>
+</section>
+
+<!-- ================= PART E ================= -->
+<section class="part" id="E">
+  <div class="part-head"><div class="part-tag">E</div><div><h2>Write the full report</h2><p>Ghép các câu con đã viết ở Part C thành bài hoàn chỉnh (≥150 từ). Bài mẫu sẽ hiện sau khi con nộp bài.</p></div></div>
+  <div class="card">
+    <textarea id="essay" style="min-height:300px" placeholder="Introduction…&#10;&#10;Overview…&#10;&#10;Body 1…&#10;&#10;Body 2…"></textarea>
+    <div class="wc" id="wc">0 words</div>
+    <div class="checklist" style="margin-top:12px">
+      <h3>Self-check</h3>
+      <label><input type="checkbox"><span>Introduction paraphrases the task (compares · shares · made purchases online · six age groups)</span></label>
+      <label><input type="checkbox"><span>Overview has 3 key features and <b>no numbers</b></span></label>
+      <label><input type="checkbox"><span>Body 1 = the three youngest groups · Body 2 = the remaining groups</span></label>
+      <label><input type="checkbox"><span><i>to</i> / <i>by</i> / <i>percentage points</i> used correctly</span></label>
+      <label><input type="checkbox"><span>At least one: <i>compared with · while · the former / the latter</i></span></label>
+      <label><input type="checkbox"><span>At least one <i>V-ing</i> clause and one relative clause (<i>who / aged</i>)</span></label>
+      <label><input type="checkbox"><span>Past simple throughout · age groups written as <i>X–Y-year-olds</i></span></label>
+    </div>
+  </div>
+
+  
+  <div class="card final" id="FINAL">
+    <h3>Nộp bài cho Thầy Độ</h3>
+    <div class="vn" id="finalInfo"></div>
+    <div class="btns"><button class="b warm big" onclick="finalSubmit()">Nộp bài</button></div>
+  </div>
+</section>
+
+    <div class="foot">Week 16 · Writing Task 1 · Thầy Độ</div>
+  </main>
+</div>
+
+<script>
+/* ---------- chart ---------- */
+(function(){
+  const svg=document.getElementById('chart'), NS='http://www.w3.org/2000/svg';
+  const groups=['15–25','26–35','36–45','46–55','56–65','65+'], y07=[20,31,26,22,12,5], y09=[23,33,38,27,18,12];
+  const L=70,R=680,T=20,B=440,max=40, sc=(B-T)/max, slot=(R-L)/groups.length, bw=30;
+  const el=(t,a,txt)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;svg.appendChild(e);return e;};
+  for(let v=0;v<=max;v+=5){const y=B-v*sc;el('line',{x1:L,x2:R,y1:y,y2:y,stroke:v%10?'#eef0f4':'#d6dae3','stroke-width':1});
+    if(v%10===0)el('text',{x:L-10,y:y+5,'text-anchor':'end','font-size':14,fill:'#24304a','font-weight':600},v);}
+  el('text',{x:22,y:(T+B)/2,'font-size':14,fill:'#24304a','font-style':'italic','text-anchor':'middle',transform:`rotate(-90 22 ${(T+B)/2})`},'percentage (%)');
+  groups.forEach((g,i)=>{const cx=L+slot*i+slot/2;
+    el('rect',{x:cx-bw-2,y:B-y07[i]*sc,width:bw,height:y07[i]*sc,fill:'#2f7d6d',rx:2});
+    el('rect',{x:cx+2,y:B-y09[i]*sc,width:bw,height:y09[i]*sc,fill:'#c98a5a',rx:2});
+    el('text',{x:cx,y:B+24,'text-anchor':'middle','font-size':15,'font-weight':700,fill:'#24304a'},g);});
+  el('line',{x1:L,x2:R,y1:B,y2:B,stroke:'#24304a','stroke-width':1.5});
+  el('text',{x:(L+R)/2,y:B+52,'text-anchor':'middle','font-size':14,fill:'#64708a'},'Age group');
+})();
+
+
+/* =====================================================================
+   CONFIG — dán link Web App (Apps Script) vào đây
+   ===================================================================== */
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzg0rzESzZB99AWw_usQ4UoWkrmqclCPMHvtfPBtPm2pD6B1kvwdImKY0CZfjVTCi2J_A/exec";
+const TASK_ID    = "W16-WT1-OnlineShopping";
+const TASK_TITLE = "Week 16 · Writing Task 1 · Online shopping by age group";
+const STORE_KEY  = "hms_" + TASK_ID;
+
+/* ---------- small utils ---------- */
+const $ = id => document.getElementById(id);
+const store = {
+  get(k){try{return JSON.parse(localStorage.getItem(k));}catch(e){return null;}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}},
+  del(k){try{localStorage.removeItem(k);}catch(e){}}
+};
+const dec = k => { try { return decodeURIComponent(escape(atob(k))); } catch(e){ return ""; } };
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+const fmtTime = s => { s = Math.max(0, Math.round(s)); const h = Math.floor(s/3600), m = Math.floor(s%3600/60), x = s%60;
+  return (h ? h + ":" : "") + String(m).padStart(2,"0") + ":" + String(x).padStart(2,"0"); };
+const wordCount = t => ((t||"").trim().match(/\S+/g) || []).length;
+
+/* ---------- sounds ---------- */
+let AC;
+function tone(f,d,type='sine',v=.18,delay=0){try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();const o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime+delay;o.type=type;o.frequency.value=f;g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+d);}catch(e){}}
+const ting = () => { tone(1318,.35); tone(1760,.5,'sine',.15,.12); };
+const oops = () => { tone(220,.25,'triangle',.15); };
+const fanfare = () => [784,988,1175,1568].forEach((f,i)=>tone(f,.25,'square',.08,i*.11));
+function popAt(el,txt,color){const r=el.getBoundingClientRect(),p=document.createElement('div');p.className='pop';p.textContent=txt;p.style.color=color;p.style.left=(r.left+r.width/2)+'px';p.style.top=(r.top-6)+'px';document.body.appendChild(p);setTimeout(()=>p.remove(),900);}
+
+/* ---------- answers (decoded into memory, removed from DOM) ---------- */
+const ANS = new WeakMap();
+document.querySelectorAll('[data-k]').forEach(el => { ANS.set(el, dec(el.dataset.k)); el.removeAttribute('data-k'); });
+
+const norm = s => (s||'').toLowerCase().replace(/[–—]/g,'-').replace(/\s*-\s*/g,'-').replace(/\s+/g,' ').replace(/[.,!]+$/,'').trim();
+const normNum = s => norm(s).replace(/[+%]|pp|percentage points?/g,'').trim();
+const isRadio = it => it.classList.contains('radio-q');
+
+function items(sec){ return [...sec.querySelectorAll('input.gap, select, .radio-q')].filter(el => ANS.has(el)); }
+function allItems(){ return [...document.querySelectorAll('.chk')].flatMap(items); }
+function givenOf(it){
+  if (isRadio(it)) { const c = it.querySelector('input:checked'); return c ? c.value : ""; }
+  return it.value || "";
+}
+function isRight(it){
+  const answers = ANS.get(it).split('|');
+  if (isRadio(it)) { const c = it.querySelector('input:checked'); return !!c && norm(c.value) === norm(answers[0]); }
+  const num = it.hasAttribute('data-num'), v = num ? normNum(it.value) : norm(it.value);
+  return v !== "" && answers.some(a => (num ? normNum(a) : norm(a)) === v);
+}
+function qText(it){
+  const host = it.closest('li, tr'); if (!host) return "";
+  const c = host.cloneNode(true);
+  c.querySelectorAll('.opts, .corr, .eh-fb, .eh-fix').forEach(x => x.remove());
+  c.querySelectorAll('input, select').forEach(x => x.replaceWith(document.createTextNode(' ___ ')));
+  let t = c.textContent.replace(/\s+/g,' ').replace(/ ([,.])/g,'$1').replace(/\s*→\s*/g,' → ').trim();
+  const tbl = it.closest('table.data');
+  if (tbl) { const idx = [...it.closest('tr').children].indexOf(it.closest('td')); t = t.split(' ')[0] + ' · ' + (idx === 2 ? '2009' : 'Change'); }
+  return t.slice(0, 220);
+}
+function shuffleOptions(){
+  document.querySelectorAll('select').forEach(s => { const o=[...s.options].slice(1); for(let i=o.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[o[i],o[j]]=[o[j],o[i]];} o.forEach(x=>s.appendChild(x)); });
+  document.querySelectorAll('.radio-q .opts').forEach(b => { const l=[...b.children]; for(let i=l.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[l[i],l[j]]=[l[j],l[i]];} l.forEach(x=>b.appendChild(x)); });
+}
+
+/* =====================================================================
+   STATE
+   ===================================================================== */
+let S = null;            // persisted state
+let started = false, finished = false, fsOutAt = null, tick = null;
+const SECTION_IDS = ['A1','A2','A3','A4','A5','B1','B2','B3','C1','C2','C3','C4','C5','C6','C7','C8','C9','D1'];
+const PART_OF = id => id[0];
+
+function newState(name, cls){
+  return { id: uid(), name, cls, startedAt: new Date().toISOString(), elapsed: 0,
+    secs: {}, models: {}, vals: [], texts: {}, essay: "", checks: [],
+    eh: { order: null, found: [], miss: 0 }, fs: [], tabHides: 0,
+    submitted: false, sent: false, payload: null };
+}
+let saveT = null;
+function save(){ clearTimeout(saveT); saveT = setTimeout(saveNow, 300); }
+function saveNow(){
+  if (!S) return;
+  if (!S.submitted) {
+    S.vals = allItems().map(givenOf);
+    document.querySelectorAll('.sent textarea').forEach(t => { S.texts[t.closest('.card').id] = t.value; });
+    S.essay = $('essay').value;
+    S.checks = [...document.querySelectorAll('.checklist input')].map(c => c.checked);
+  }
+  store.set(STORE_KEY, S);
+}
+
+/* =====================================================================
+   GATE / START
+   ===================================================================== */
+function initGate(){
+  const d = store.get(STORE_KEY);
+  if (d && d.name) {
+    $('inName').value = d.name; $('inClass').value = d.cls;
+    if (d.submitted) { $('gateNote').innerHTML = 'Con <b>đã nộp</b> bài này. Bấm để xem lại kết quả.'; $('btnStart').textContent = 'Xem kết quả'; }
+    else { $('gateNote').innerHTML = 'Con có bài <b>đang làm dở</b>. Bấm "Tiếp tục" để làm tiếp.'; $('btnStart').textContent = 'Tiếp tục làm bài'; }
+  }
+  $('gate').classList.add('on');
+  setTimeout(() => $('inName').focus(), 50);
+  ['inName','inClass'].forEach(id => $(id).addEventListener('keydown', e => { if (e.key === 'Enter') startTest(); }));
+}
+function startTest(){
+  const name = $('inName').value.replace(/\s+/g,' ').trim();
+  const cls  = $('inClass').value.replace(/\s+/g,'').toUpperCase();
+  if (name.split(' ').length < 2) { $('gateErr').textContent = 'Con nhập đầy đủ họ và tên.'; $('inName').focus(); return; }
+  if (cls.length < 2) { $('gateErr').textContent = 'Con nhập lớp.'; $('inClass').focus(); return; }
+  const d = store.get(STORE_KEY);
+  const same = d && norm(d.name) === norm(name) && d.cls === cls;
+  S = same ? d : newState(name, cls);
+  if (!same) store.del(STORE_KEY);
+  $('gate').classList.remove('on');
+  $('stName').textContent = S.name; $('stClass').textContent = S.cls;
+  ehBuild(S.eh.order);
+  restore();
+  started = true;
+  if (S.submitted) { lockAll(); finished = true; showResult(); if (!S.sent) sendResult(); return; }
+  store.set('hms_fs_pref', true);
+  goFS(false);
+  tick = setInterval(() => { S.elapsed++; $('timer').textContent = fmtTime(S.elapsed); if (S.elapsed % 10 === 0) saveNow(); }, 1000);
+  saveNow();
+  scormStart();
+}
+
+/* =====================================================================
+   RESTORE
+   ===================================================================== */
+function restore(){
+  const its = allItems();
+  (S.vals || []).forEach((v, i) => { const it = its[i]; if (!it || !v) return;
+    if (isRadio(it)) { const r = [...it.querySelectorAll('input')].find(x => x.value === v); if (r) r.checked = true; }
+    else it.value = v; });
+  Object.entries(S.texts || {}).forEach(([id, v]) => { const t = $(id) && $(id).querySelector('textarea'); if (t) t.value = v; });
+  $('essay').value = S.essay || ""; updateWC();
+  (S.checks || []).forEach((c, i) => { const x = document.querySelectorAll('.checklist input')[i]; if (x) x.checked = c; });
+  Object.keys(S.models || {}).forEach(id => openModel($(id), true));
+  (S.eh.found || []).forEach(i => { const li = document.querySelector(`#ehList>li[data-i="${i}"]`); if (li) ehMarkFound(li, true); });
+  ehStats();
+  SECTION_IDS.forEach(id => { if (S.secs[id]) { if (id === 'D1') ehSubmit(true); else lockSec($(id), true); } });
+  $('timer').textContent = fmtTime(S.elapsed);
+  updateScore(); updateProgress();
+}
+
+/* =====================================================================
+   SECTION SUBMIT (one attempt per section)
+   ===================================================================== */
+function submitSec(id, silent){
+  const sec = $(id); if (!S || S.secs[id]) return;
+  const its = items(sec), blanks = its.filter(it => !givenOf(it)).length;
+  if (!silent && blanks && !confirm(`Còn ${blanks} câu chưa làm. Mỗi phần chỉ nộp được 1 lần. Con vẫn nộp phần này?`)) return;
+  S.secs[id] = true;
+  const r = lockSec(sec, !!silent);
+  if (!silent) (r === its.length ? ting : oops)();
+  saveNow(); updateScore(); updateProgress();
+}
+function lockSec(sec, quiet){
+  let right = 0; const its = items(sec);
+  its.forEach(it => {
+    const ok = isRight(it); if (ok) right++;
+    it.dataset.done = ok ? '1' : '0';
+    const ans = ANS.get(it).split('|')[0];
+    if (isRadio(it)) {
+      it.querySelectorAll('input').forEach(x => x.disabled = true);
+      it.querySelectorAll('label').forEach(l => { const v = l.querySelector('input').value;
+        if (l.querySelector('input').checked) l.classList.add(ok ? 'ok' : 'bad');
+        else if (!ok && norm(v) === norm(ans)) l.classList.add('shown'); });
+    } else {
+      it.disabled = true; it.classList.add(ok ? 'ok' : 'bad');
+      if (!ok && !(it.nextElementSibling && it.nextElementSibling.classList.contains('corr'))) {
+        const c = document.createElement('span'); c.className = 'corr'; c.textContent = '→ ' + ans.replace(/-year/g,'–year').replace(/^(\d+)-(\d+)/,'$1–$2');
+        it.after(c);
+      }
+    }
+  });
+  const res = sec.querySelector('.result');
+  if (res) { res.textContent = `${right}/${its.length} đúng`; res.style.color = right === its.length ? 'var(--ok)' : 'var(--bad)'; }
+  const b = sec.querySelector('.subbtn'); if (b) { b.disabled = true; b.textContent = 'Đã nộp'; }
+  sec.querySelectorAll('[data-bank] .chip').forEach(c => c.disabled = true);
+  return right;
+}
+function updateScore(){
+  const all = allItems();
+  $('total').textContent = all.length;
+  $('score').textContent = all.filter(it => it.dataset.done === '1').length;
+}
+
+/* ---------- word bank ---------- */
+let lastGap = null;
+document.addEventListener('focusin', e => { if (e.target.matches('input.gap')) lastGap = e.target; });
+document.querySelectorAll('[data-bank] .chip').forEach(c => c.addEventListener('click', () => {
+  const card = c.closest('.card'); if (S && S.secs[card.id]) return;
+  const g = (lastGap && card.contains(lastGap) && !lastGap.disabled) ? lastGap : [...card.querySelectorAll('input.gap')].find(i => !i.value);
+  if (g) { g.value = c.textContent; tone(880,.12,'sine',.1); const n = [...card.querySelectorAll('input.gap')].find(i => !i.value); if (n) n.focus(); save(); }
+}));
+
+/* =====================================================================
+   PART C — write first, then see the model
+   ===================================================================== */
+function showModel(btn){
+  const card = btn.closest('.card'), ta = card.querySelector('textarea');
+  if (S.models[card.id]) return;
+  if (wordCount(ta.value) < 5) {
+    ta.classList.remove('need'); void ta.offsetWidth; ta.classList.add('need'); oops();
+    let h = card.querySelector('.hint'); if (!h) { h = document.createElement('div'); h.className = 'hint'; ta.after(h); }
+    h.textContent = 'Con viết câu của mình trước (ít nhất 5 từ) rồi mới xem câu mẫu.';
+    ta.focus(); return;
+  }
+  S.models[card.id] = true; openModel(card); tone(988,.15,'sine',.12); saveNow(); updateProgress();
+}
+function openModel(card, quiet){
+  if (!card) return;
+  const ta = card.querySelector('textarea'), m = card.querySelector('.model'), b = card.querySelector('.btns .warm');
+  ta.readOnly = true; m.classList.add('open');
+  const h = card.querySelector('.hint'); if (h) h.remove();
+  if (b) { b.disabled = true; b.textContent = 'Đã xem câu mẫu'; }
+}
+
+/* =====================================================================
+   PART D — error hunt
+   ===================================================================== */
+const DEL_ANS='x|xoá|xóa|delete|(xoá)|bỏ';
+const showAns=a=>a==='x'?'(bỏ từ này)':a.split('|')[0];
+const EH=[
+ {s:"Among 15–25-years-olds, the share rose from 20% to 23%.", e:"15–25-years-olds", a:"15–25-year-olds", why:"Tính từ ghép: <b>year</b> không có “s”, chỉ <b>olds</b> có “s”."},
+ {s:"The figure for 36–45-year-olds surged to 12 percentage points.", e:"to", a:"by", why:"12 percentage points là <b>mức chênh</b> → dùng <b>by</b>."},
+ {s:"Internet users aged 65 and over were the least likely buying goods online.", e:"buying", a:"to buy", why:"<b>the least likely to + V</b>."},
+ {s:"People aged 36–45, that overtook those aged 26–35, became the most active shoppers.", e:"that", a:"who", why:"Mệnh đề quan hệ có dấu phẩy không dùng <b>that</b> → <b>who</b>."},
+ {s:"The figure for the oldest group rose sharply, climbed from 5% to 12%.", e:"climbed", a:"climbing", why:"Câu đã có động từ chính (<b>rose</b>). Sau dấu phẩy, thêm chi tiết bằng <b>V-ing</b>: rose sharply, <b>climbing</b> from 5% to 12%."},
+ {s:"Overall, online shopping participation increases across all six age groups.", e:"increases", a:"increased", why:"Số liệu 2007–2009 → <b>quá khứ đơn</b>."},
+ {s:"Around 31% of internet users aged 26–35 shopped online, compared with 26% of that aged 36–45.", e:"that", a:"those", why:"Thay cho danh từ số nhiều “internet users” → <b>those</b>."},
+ {s:"The former figure edged up to 33%, when the latter surged to 38%.", e:"when", a:"while", why:"Nối hai ý tương phản → <b>while</b>."},
+ {s:"The figure for 36–45-year-olds was surged to 38% in 2009.", e:"was", a:"x", why:"Động từ quá khứ chủ động không có <b>be</b> đứng trước: <b>surged</b>, không viết “was surged”."},
+ {s:"The share of 26–35-year-olds stood at 31% in 2007 before increased to 33%.", e:"increased", a:"increasing", why:"Sau <b>before</b> dùng <b>V-ing</b>: before increasing."},
+ {s:"The figure for 36–45-year-olds rose dramatically at 38% in 2009.", e:"at", a:"to", why:"Mức đạt tới dùng <b>to</b>: rose dramatically <b>to</b> 38%."},
+ {s:"The proportion of people used the internet to shop rose in all six age groups.", e:"used", a:"who used|using", why:"Thiếu <b>who</b>: people <b>who used</b> … (hoặc people <b>using</b> …)."},
+ {s:"The oldest group had the lowest figure, but it's share more than doubled.", e:"it's", a:"its", why:"<b>its</b> = của nó; <b>it's</b> = it is."},
+ {s:"By 2009, the 26–35 group had surpassed by the 36–45 group.", e:"surpassed", a:"been surpassed", why:"Bị động: had <b>been surpassed</b> by …"},
+ {s:"The propotion of 56–65-year-olds who shopped online rose to 18%.", e:"propotion", a:"proportion", why:"Chính tả từ khoá: <b>proportion</b>."},
+ {s:"Internet users aged 26–35 saw a slightly increase, from 31% to 33%.", e:"slightly", a:"slight", why:"Trước danh từ <b>increase</b> dùng tính từ: a <b>slight</b> increase."},
+ {s:"At 38%, the 36–45 group had the most highest figure on the chart.", e:"most", a:"x", why:"<b>highest</b> đã là so sánh nhất, không thêm <b>most</b>."},
+ {s:"The number of 15–25-year-olds who shopped online rose from 20% to 23%.", e:"number", a:"proportion|percentage|share", why:"Số liệu là % → <b>the proportion / percentage of</b>, không dùng “the number of”."},
+ {s:"The line graph compares the shares of Australian internet users in six age groups.", e:"line", a:"bar", why:"Đây là <b>bar chart</b>. Kiểm tra đúng loại biểu đồ."},
+ {s:"In 2007, the share of internet users aged 65 and over around 5%.", e:"around", a:"was around|stood at around|was about|stood at about|was approximately|stood at approximately|was roughly|stood at roughly", why:"Mệnh đề thiếu động từ chính. Thêm động từ: the share … <b>was / stood at</b> around 5%."},
+ {s:"The proportion of 46–55-year-olds who shopped online was increased from 22% to 27%.", e:"was", a:"x", why:"<b>increase</b> ở đây là nội động từ (tự tăng), dùng chủ động: <b>increased</b>, không viết “was increased”."},
+ {s:"Regarding to the remaining age groups, all three figures rose.", e:"to", a:"x", why:"<b>Regarding</b> + danh từ, không có “to”."}
+];
+function ehBuild(order){
+  const list = $('ehList'); list.innerHTML = '';
+  if (!order) { order = EH.map((_, i) => i).sort(() => Math.random() - .5); }
+  if (S) S.eh.order = order;
+  order.forEach(i => { const d = EH[i], li = document.createElement('li'); li.dataset.i = i;
+    const parts = d.s.split(' '); let errDone = false;
+    parts.forEach((w, k) => { const m = w.match(/^(.*?)([.,]?)$/), core = m[1], pun = m[2];
+      const t = document.createElement('span'); t.className = 'tok'; t.textContent = core;
+      if (!errDone && core === d.e) { t.dataset.err = '1'; errDone = true; }
+      t.onclick = () => ehClick(li, t); li.appendChild(t);
+      if (pun) { const q = document.createElement('span'); q.className = 'pun'; q.textContent = pun; li.appendChild(q); }
+      if (k < parts.length - 1) li.appendChild(document.createTextNode(' ')); });
+    const fix = document.createElement('span'); fix.className = 'eh-fix'; fix.innerHTML = '<span class="fix-arrow">→</span>';
+    const inp = document.createElement('input'); inp.className = 'gap'; inp.placeholder = 'sửa thành… (thừa: gõ x)'; ANS.set(inp, d.a==='x'?DEL_ANS:d.a);
+    inp.addEventListener('input', save);
+    fix.appendChild(inp); li.appendChild(fix);
+    const fb = document.createElement('span'); fb.className = 'eh-fb'; li.appendChild(fb);
+    list.appendChild(li); });
+  $('ehTotal').textContent = EH.length; ehStats();
+}
+function ehStats(){ $('ehFound').textContent = document.querySelectorAll('#ehList .tok.found').length; $('ehMiss').textContent = S ? S.eh.miss : 0; }
+function ehMarkFound(li, quiet){
+  const t = li.querySelector('.tok[data-err]'); t.classList.add('found'); if (!quiet) t.classList.add('just');
+  li.querySelectorAll('.tok').forEach(x => x.classList.add('lock'));
+  const fix = li.querySelector('.eh-fix'); fix.classList.add('open'); if (!quiet) fix.querySelector('input').focus();
+  return t;
+}
+function ehClick(li, t){
+  if (!started || S.secs.D1 || li.querySelector('.tok.found')) return;
+  if (t.dataset.err) { ehMarkFound(li); S.eh.found.push(+li.dataset.i); tone(988,.15,'sine',.16); tone(1480,.3,'sine',.14,.1); popAt(t,'Found it!','var(--orange)'); }
+  else { S.eh.miss++; t.classList.remove('miss'); void t.offsetWidth; t.classList.add('miss'); setTimeout(() => t.classList.remove('miss'), 700); oops(); popAt(t,'✗','var(--bad)'); }
+  ehStats(); saveNow(); updateProgress();
+}
+function ehSubmit(silent){
+  const lis = [...document.querySelectorAll('#ehList>li')];
+  if (!silent) {
+    if (S.secs.D1) return;
+    const unfound = lis.filter(li => !li.querySelector('.tok.found')).length;
+    const empty = lis.filter(li => li.querySelector('.tok.found') && !li.querySelector('input').value.trim()).length;
+    if ((unfound || empty) && !confirm(`Con còn ${unfound} câu chưa tìm lỗi và ${empty} câu chưa gõ cách sửa. Mỗi phần chỉ nộp được 1 lần. Vẫn nộp?`)) return;
+  }
+  S.secs.D1 = true; let right = 0;
+  lis.forEach(li => { const d = EH[li.dataset.i], inp = li.querySelector('input'), fb = li.querySelector('.eh-fb'), found = li.querySelector('.tok.found');
+    li.querySelectorAll('.tok').forEach(x => x.classList.add('lock'));
+    const ok = !!found && isRight(inp); inp.dataset.done = ok ? '1' : '0'; inp.disabled = true;
+    if (ok) { right++; inp.classList.add('ok'); fb.className = 'eh-fb ok'; fb.innerHTML = '✓ ' + d.why; }
+    else { if (!found) { li.querySelector('.tok[data-err]').classList.add('answer'); li.querySelector('.eh-fix').classList.add('open'); }
+      inp.classList.add('bad'); fb.className = 'eh-fb bad'; fb.innerHTML = `✗ Đáp án: <b>${d.e}</b> → <b>${showAns(d.a)}</b>. ${d.why}`; } });
+  const r = document.querySelector('#D1 .result');
+  r.textContent = `${right}/${EH.length} đúng · bấm nhầm ${S.eh.miss} lần`; r.style.color = right === EH.length ? 'var(--ok)' : 'var(--bad)';
+  const b = $('ehSubmit'); b.disabled = true; b.textContent = 'Đã nộp';
+  if (!silent) { right === EH.length ? fanfare() : ting(); saveNow(); }
+  updateScore(); updateProgress();
+}
+
+/* =====================================================================
+   PART E — essay
+   ===================================================================== */
+function updateWC(){ const n = wordCount($('essay').value); $('wc').textContent = n + ' words' + (n >= 150 ? ' ✓' : ' (cần ≥ 150)'); $('wc').style.color = n >= 150 ? 'var(--ok)' : 'var(--muted)'; }
+$('essay').addEventListener('input', () => { updateWC(); save(); updateProgressSoon(); });
+document.addEventListener('input', e => { if (e.target.closest('.right')) save(); });
+document.addEventListener('change', e => { if (e.target.closest('.right')) { save(); updateProgressSoon(); } });
+
+/* =====================================================================
+   PROGRESS (left pane)
+   ===================================================================== */
+const CHIPS = [...SECTION_IDS.map(id => ({ id, label: id === 'D1' ? 'D' : id })), { id: 'E', label: 'E' }, { id: 'FINAL', label: 'Nộp bài' }];
+function buildChips(){
+  $('progChips').innerHTML = '';
+  CHIPS.forEach(c => { const b = document.createElement('button'); b.className = 'pc'; b.textContent = c.label; b.dataset.id = c.id;
+    b.onclick = () => { const t = $(c.id); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+    $('progChips').appendChild(b); });
+}
+let progT = null; function updateProgressSoon(){ clearTimeout(progT); progT = setTimeout(updateProgress, 400); }
+function updateProgress(){
+  if (!S) return;
+  document.querySelectorAll('.pc').forEach(b => { const id = b.dataset.id; b.classList.remove('done','part');
+    if (SECTION_IDS.includes(id)) {
+      const cDone = id[0] !== 'C' || S.models[id];
+      if (S.secs[id] && cDone) b.classList.add('done'); else if (S.secs[id] || S.models[id]) b.classList.add('part');
+    } else if (id === 'E') { const n = wordCount($('essay').value); if (n >= 150) b.classList.add('done'); else if (n > 0) b.classList.add('part'); }
+    else if (id === 'FINAL' && S.submitted) b.classList.add('done'); });
+  const left = SECTION_IDS.filter(id => !S.secs[id]).length, n = wordCount($('essay').value);
+  $('finalInfo').innerHTML = S.submitted ? 'Con đã nộp bài.' :
+    `Còn <b>${left}</b> phần chưa nộp · bài viết: <b>${n}</b> từ. Khi bấm "Nộp bài", các phần chưa nộp sẽ được chấm theo bài con đang làm.`;
+}
+
+/* =====================================================================
+   FULL SCREEN + focus log
+   ===================================================================== */
+const fsEl = () => document.fullscreenElement || document.webkitFullscreenElement;
+const fsOK = () => !!(document.fullscreenEnabled || document.webkitFullscreenEnabled);
+function goFS(fromWarn){
+  const el = document.documentElement;
+  try { const p = el.requestFullscreen ? el.requestFullscreen() : (el.webkitRequestFullscreen && el.webkitRequestFullscreen()); if (p && p.catch) p.catch(() => {}); } catch(e){}
+  if (fromWarn && !fsOK()) $('fsWarn').classList.remove('on');
+}
+function onFSChange(){
+  if (!started || finished) return;
+  if (!fsEl()) { fsOutAt = Date.now(); $('fsWarn').classList.add('on'); }
+  else { if (fsOutAt) { S.fs.push({ at: new Date(fsOutAt).toLocaleTimeString('vi-VN'), sec: Math.round((Date.now() - fsOutAt) / 1000) }); fsOutAt = null; saveNow(); }
+    $('fsWarn').classList.remove('on'); }
+}
+document.addEventListener('fullscreenchange', onFSChange);
+document.addEventListener('webkitfullscreenchange', onFSChange);
+document.addEventListener('visibilitychange', () => { if (started && !finished && document.hidden) { S.tabHides++; saveNow(); } });
+
+/* =====================================================================
+   SCORM 1.2
+   ===================================================================== */
+let API = null, scormOn = false, scormDone = false;
+function findAPI(w){ let n = 0; try { while (w && n < 12) { if (w.API) return w.API; if (w.parent === w) break; w = w.parent; n++; } } catch(e){} return null; }
+function scormInit(){
+  API = findAPI(window) || (window.opener ? findAPI(window.opener) : null);
+  if (!API) return;
+  try { API.LMSInitialize(""); scormOn = true; } catch(e){ scormOn = false; }
+}
+function sGet(k){ try { return scormOn ? API.LMSGetValue(k) : ""; } catch(e){ return ""; } }
+function sSet(k,v){ try { if (scormOn) API.LMSSetValue(k, String(v)); } catch(e){} }
+function scormStart(){ if (!scormOn) return; const st = sGet('cmi.core.lesson_status'); if (!st || st === 'not attempted') sSet('cmi.core.lesson_status','incomplete'); try { API.LMSCommit(""); } catch(e){} }
+function scormTime(s){ const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60; return String(h).padStart(4,'0')+':'+String(m).padStart(2,'0')+':'+String(x).padStart(2,'0'); }
+function scormFinish(pct){
+  if (!scormOn) return;
+  sSet('cmi.core.score.min', 0); sSet('cmi.core.score.max', 100); sSet('cmi.core.score.raw', pct);
+  sSet('cmi.core.lesson_status', 'completed'); sSet('cmi.core.session_time', scormTime(S.elapsed));
+  try { API.LMSCommit(""); } catch(e){}
+}
+function scormClose(){ if (scormOn && !scormDone) { scormDone = true; try { API.LMSCommit(""); API.LMSFinish(""); } catch(e){} } }
+window.addEventListener('pagehide', () => { saveNow(); scormClose(); });
+window.addEventListener('beforeunload', () => { saveNow(); });
+
+/* =====================================================================
+   FINAL SUBMIT
+   ===================================================================== */
+function lockAll(){
+  document.querySelectorAll('.right textarea').forEach(t => t.readOnly = true);
+  document.querySelectorAll('.checklist input').forEach(c => c.disabled = true);
+  document.querySelectorAll('.sent .btns .warm').forEach(b => b.disabled = true);
+  document.querySelectorAll('#FINAL .b').forEach(b => { b.disabled = true; b.textContent = 'Đã nộp bài'; });
+}
+function finalSubmit(){
+  if (!S || S.submitted) return;
+  saveNow();
+  const left = SECTION_IDS.filter(id => !S.secs[id]);
+  const n = wordCount($('essay').value);
+  let msg = 'Con chắc chắn nộp bài cho Thầy Độ?';
+  if (left.length) msg += `\n- Còn ${left.length} phần chưa nộp (${left.map(x => x === 'D1' ? 'D' : x).join(', ')}): sẽ được chấm theo bài đang làm.`;
+  const noWrite = SECTION_IDS.filter(id => id[0] === 'C').filter(id => wordCount(($(id).querySelector('textarea') || {}).value) === 0);
+  if (noWrite.length) msg += `\n- Còn ${noWrite.length} câu ở Part C chưa viết.`;
+  if (n < 150) msg += `\n- Bài viết Part E mới có ${n} từ (cần ≥ 150).`;
+  msg += '\nSau khi nộp, con không sửa được nữa.';
+  if (!confirm(msg)) return;
+  left.forEach(id => { if (id === 'D1') ehSubmit(true); else { S.secs[id] = true; lockSec($(id), true); } });
+  S.submitted = true; finished = true; clearInterval(tick);
+  lockAll(); updateScore(); updateProgress();
+  S.payload = buildPayload();
+  saveNow();
+  scormFinish(S.payload.pct);
+  fanfare();
+  if (fsEl()) { try { (document.exitFullscreen || document.webkitExitFullscreen).call(document); } catch(e){} }
+  $('fsWarn').classList.remove('on');
+  showResult(); sendResult();
+}
+function secScore(prefix){ const its = SECTION_IDS.filter(id => id.startsWith(prefix)).flatMap(id => items($(id)));
+  return { c: its.filter(it => it.dataset.done === '1').length, t: its.length }; }
+function buildPayload(){
+  const all = allItems(), c = all.filter(it => it.dataset.done === '1').length;
+  const details = [];
+  SECTION_IDS.forEach(id => {
+    if (id === 'D1') {
+      document.querySelectorAll('#ehList>li').forEach(li => { const d = EH[li.dataset.i], inp = li.querySelector('input'), found = !!li.querySelector('.tok.found');
+        details.push({ sec: 'D', q: d.s, given: found ? ('[' + d.e + '] → ' + (inp.value || '(trống)')) : '(không tìm ra lỗi)', correct: d.e + ' → ' + showAns(d.a), ok: inp.dataset.done === '1' }); });
+    } else items($(id)).forEach(it => details.push({ sec: id, q: qText(it), given: givenOf(it), correct: ANS.get(it).split('|')[0], ok: it.dataset.done === '1' }));
+  });
+  const sentences = SECTION_IDS.filter(id => id[0] === 'C').map(id => { const card = $(id);
+    return { id, label: card.querySelector('.para').textContent.trim(), text: card.querySelector('textarea').value.trim(),
+      model: card.querySelector('.model').textContent.replace(/^\s*Model sentence\s*/,'').replace(/\s+/g,' ').trim(), sawModel: !!S.models[id] }; });
+  const checks = [...document.querySelectorAll('.checklist label')].map(l => ({ item: l.textContent.replace(/\s+/g,' ').trim(), checked: l.querySelector('input').checked }));
+  return {
+    id: S.id, taskId: TASK_ID, title: TASK_TITLE, name: S.name, cls: S.cls,
+    source: scormOn ? 'SCORM' : 'HTML', lmsName: sGet('cmi.core.student_name'), lmsId: sGet('cmi.core.student_id'),
+    startedAt: S.startedAt, submittedAt: new Date().toISOString(), timeSpent: S.elapsed,
+    correct: c, total: all.length, pct: all.length ? Math.round(c / all.length * 100) : 0,
+    parts: { A: secScore('A'), B: secScore('B'), C: secScore('C'), D: secScore('D') },
+    ehMiss: S.eh.miss, sentences, essay: $('essay').value.trim(), essayWords: wordCount($('essay').value), checks,
+    fsExits: S.fs, tabHides: S.tabHides, details
+  };
+}
+function showResult(){
+  const p = S.payload; if (!p) return;
+  $('resName').textContent = p.name + ' · ' + p.cls;
+  $('resPct').textContent = p.pct;
+  const cell = (l, v) => `<div>${l}<b>${v}</b></div>`;
+  $('resGrid').innerHTML = cell('Tổng câu đúng', p.correct + '/' + p.total) + cell('A · Vocab', p.parts.A.c + '/' + p.parts.A.t) +
+    cell('B · Data', p.parts.B.c + '/' + p.parts.B.t) + cell('C · Grammar', p.parts.C.c + '/' + p.parts.C.t) +
+    cell('D · Error hunt', p.parts.D.c + '/' + p.parts.D.t) + cell('Bài viết', p.essayWords + ' từ') + cell('Thời gian', fmtTime(p.timeSpent)) +
+    cell('Thoát màn hình', p.fsExits.length + ' lần');
+  $('resultOv').classList.add('on'); $('resultOv').scrollTop = 0;
+  renderSend();
+}
+function closeResult(){ $('resultOv').classList.remove('on'); }
+function renderSend(state){
+  const el = $('sendStatus'), rb = $('btnResend');
+  if (S.sent) { el.className = 'send ok'; el.textContent = 'Đã gửi bài cho Thầy Độ.'; rb.style.display = 'none'; return; }
+  if (state === 'sending') { el.className = 'send'; el.textContent = 'Đang gửi bài…'; rb.style.display = 'none'; return; }
+  if (state === 'nourl') { el.className = 'send bad'; el.textContent = 'Phiếu chưa được cài link nộp bài. Con chụp màn hình kết quả gửi Thầy Độ.'; rb.style.display = 'none'; return; }
+  if (state === 'fail') { el.className = 'send bad'; el.textContent = 'Chưa gửi được bài. Con kiểm tra mạng rồi bấm "Gửi lại".'; rb.style.display = ''; return; }
+  el.className = 'send'; el.textContent = '';
+}
+async function sendResult(){
+  if (!S || !S.payload || S.sent) { renderSend(); return; }
+  if (!/^https:\/\/script\.google(usercontent)?\.com\//.test(WEB_APP_URL)) { renderSend('nourl'); return; }
+  renderSend('sending');
+  const body = JSON.stringify(S.payload);
+  try {
+    const r = await fetch(WEB_APP_URL, { method: 'POST', body });
+    const j = await r.json(); if (!j.ok) throw new Error(j.error || 'server');
+    S.sent = true;
+  } catch (e) {
+    try { await fetch(WEB_APP_URL, { method: 'POST', mode: 'no-cors', body }); S.sent = true; }
+    catch (e2) { saveNow(); renderSend('fail'); return; }
+  }
+  saveNow(); renderSend();
+}
+function newAttempt(){
+  if (!confirm('Bắt đầu lần làm mới? Bài lần này đã được lưu ở chỗ Thầy Độ.')) return;
+  if (S && !S.sent && S.payload && !confirm('Bài lần này CHƯA gửi được. Vẫn làm lần mới?')) return;
+  store.del(STORE_KEY); location.reload();
+}
+
+/* =====================================================================
+   BOOT
+   ===================================================================== */
+shuffleOptions();
+buildChips();
+updateScore();
+scormInit();
+initGate();
+
+</script>
+</body>
+</html>
