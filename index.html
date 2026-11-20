@@ -621,7 +621,7 @@ textarea[readonly]{background:#f6f7fa;color:#3d4760}
 
 <!-- ================= PART D ================= -->
 <section class="part" id="D">
-  <div class="part-head"><div class="part-tag">D</div><div><h2>Error hunt</h2><p>Mỗi câu có <b>một</b> từ sai. Con bấm vào từ sai → gõ cách sửa → bấm <b>Nộp bài</b>. Nếu từ đó <b>thừa</b> (phải bỏ đi), con gõ <b>x</b>.</p></div></div>
+  <div class="part-head"><div class="part-tag">D</div><div><h2>Error hunt</h2><p>Mỗi câu có <b>một</b> từ sai. Con bấm vào từ sai → gõ cách sửa → bấm <b>Enter</b> để kiểm tra (mỗi câu chỉ kiểm tra được 1 lần). Nếu từ đó <b>thừa</b>, con gõ <b>x</b>. Câu nào chưa làm sẽ được chấm khi bấm <b>Nộp bài</b>.</p></div></div>
   <div class="card chk" id="D1">
     <div class="eh-stats"><span class="pill">Tìm được: <b id="ehFound">0</b> / <b id="ehTotal">0</b></span><span class="pill">Bấm nhầm: <b id="ehMiss" style="color:var(--bad)">0</b></span></div>
     <ol class="qs eh-list" id="ehList"></ol>
@@ -753,7 +753,7 @@ const PART_OF = id => id[0];
 function newState(name, cls){
   return { id: uid(), name, cls, startedAt: new Date().toISOString(), elapsed: 0,
     secs: {}, models: {}, vals: [], texts: {}, essay: "", checks: [],
-    eh: { order: null, found: [], miss: 0 }, fs: [], tabHides: 0,
+    eh: { order: null, found: [], miss: 0, checked: [] }, fs: [], tabHides: 0,
     submitted: false, sent: false, payload: null };
 }
 let saveT = null;
@@ -818,7 +818,8 @@ function restore(){
   (S.checks || []).forEach((c, i) => { const x = document.querySelectorAll('.checklist input')[i]; if (x) x.checked = c; });
   Object.keys(S.models || {}).forEach(id => openModel($(id), true));
   (S.eh.found || []).forEach(i => { const li = document.querySelector(`#ehList>li[data-i="${i}"]`); if (li) ehMarkFound(li, true); });
-  ehStats();
+  (S.eh.checked || []).forEach(i => { const li = document.querySelector(`#ehList>li[data-i="${i}"]`); if (li) ehCheckOne(li); });
+  ehSummary(); ehStats();
   SECTION_IDS.forEach(id => { if (S.secs[id]) { if (id === 'D1') ehSubmit(true); else lockSec($(id), true); } });
   $('timer').textContent = fmtTime(S.elapsed);
   updateScore(); updateProgress();
@@ -940,8 +941,9 @@ function ehBuild(order){
       if (pun) { const q = document.createElement('span'); q.className = 'pun'; q.textContent = pun; li.appendChild(q); }
       if (k < parts.length - 1) li.appendChild(document.createTextNode(' ')); });
     const fix = document.createElement('span'); fix.className = 'eh-fix'; fix.innerHTML = '<span class="fix-arrow">→</span>';
-    const inp = document.createElement('input'); inp.className = 'gap'; inp.placeholder = 'sửa thành… (thừa: gõ x)'; ANS.set(inp, d.a==='x'?DEL_ANS:d.a);
+    const inp = document.createElement('input'); inp.className = 'gap'; inp.placeholder = 'gõ sửa rồi Enter'; ANS.set(inp, d.a==='x'?DEL_ANS:d.a);
     inp.addEventListener('input', save);
+    inp.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); ehEnter(li, inp); } });
     fix.appendChild(inp); li.appendChild(fix);
     const fb = document.createElement('span'); fb.className = 'eh-fb'; li.appendChild(fb);
     list.appendChild(li); });
@@ -960,23 +962,48 @@ function ehClick(li, t){
   else { S.eh.miss++; t.classList.remove('miss'); void t.offsetWidth; t.classList.add('miss'); setTimeout(() => t.classList.remove('miss'), 700); oops(); popAt(t,'✗','var(--bad)'); }
   ehStats(); saveNow(); updateProgress();
 }
+function ehCheckOne(li){
+  const d = EH[li.dataset.i], inp = li.querySelector('input'), fb = li.querySelector('.eh-fb'), found = li.querySelector('.tok.found');
+  li.dataset.checked = '1';
+  li.querySelectorAll('.tok').forEach(x => x.classList.add('lock'));
+  const ok = !!found && isRight(inp); inp.dataset.done = ok ? '1' : '0'; inp.disabled = true;
+  if (ok) { inp.classList.add('ok'); fb.className = 'eh-fb ok'; fb.innerHTML = '✓ ' + d.why; }
+  else { if (!found) { li.querySelector('.tok[data-err]').classList.add('answer'); li.querySelector('.eh-fix').classList.add('open'); }
+    inp.classList.add('bad'); fb.className = 'eh-fb bad'; fb.innerHTML = `✗ Đáp án: <b>${d.e}</b> → <b>${showAns(d.a)}</b>. ${d.why}`; }
+  return ok;
+}
+function ehEnter(li, inp){
+  if (!S || S.secs.D1 || li.dataset.checked) return;
+  if (!inp.value.trim()) { inp.classList.remove('need'); void inp.offsetWidth; inp.classList.add('need'); oops(); return; }
+  const ok = ehCheckOne(li);
+  S.eh.checked = S.eh.checked || []; S.eh.checked.push(+li.dataset.i);
+  if (ok) { ting(); popAt(inp, '✓', 'var(--ok)'); } else { oops(); popAt(inp, '✗', 'var(--bad)'); }
+  const lis = [...document.querySelectorAll('#ehList>li')];
+  if (lis.every(x => x.dataset.checked)) { ehSubmit(true); if (lis.every(x => x.querySelector('input').dataset.done === '1')) fanfare(); }
+  else { const n = lis.find(x => !x.dataset.checked && x.querySelector('.tok.found')); if (n) n.querySelector('input').focus(); }
+  ehSummary(); saveNow(); updateScore(); updateProgress();
+}
+function ehSummary(){
+  const lis = [...document.querySelectorAll('#ehList>li')], chk = lis.filter(x => x.dataset.checked);
+  const right = chk.filter(x => x.querySelector('input').dataset.done === '1').length;
+  const r = document.querySelector('#D1 .result');
+  if (!chk.length) { r.textContent = ''; return; }
+  r.textContent = S.secs.D1 ? `${right}/${EH.length} đúng · bấm nhầm ${S.eh.miss} lần` : `Đã kiểm tra ${chk.length}/${EH.length} câu · đúng ${right}`;
+  r.style.color = S.secs.D1 ? (right === EH.length ? 'var(--ok)' : 'var(--bad)') : 'var(--navy)';
+}
 function ehSubmit(silent){
   const lis = [...document.querySelectorAll('#ehList>li')];
   if (!silent) {
     if (S.secs.D1) return;
-    const unfound = lis.filter(li => !li.querySelector('.tok.found')).length;
-    const empty = lis.filter(li => li.querySelector('.tok.found') && !li.querySelector('input').value.trim()).length;
+    const rest = lis.filter(li => !li.dataset.checked);
+    const unfound = rest.filter(li => !li.querySelector('.tok.found')).length;
+    const empty = rest.filter(li => li.querySelector('.tok.found') && !li.querySelector('input').value.trim()).length;
     if ((unfound || empty) && !confirm(`Con còn ${unfound} câu chưa tìm lỗi và ${empty} câu chưa gõ cách sửa. Mỗi phần chỉ nộp được 1 lần. Vẫn nộp?`)) return;
   }
-  S.secs.D1 = true; let right = 0;
-  lis.forEach(li => { const d = EH[li.dataset.i], inp = li.querySelector('input'), fb = li.querySelector('.eh-fb'), found = li.querySelector('.tok.found');
-    li.querySelectorAll('.tok').forEach(x => x.classList.add('lock'));
-    const ok = !!found && isRight(inp); inp.dataset.done = ok ? '1' : '0'; inp.disabled = true;
-    if (ok) { right++; inp.classList.add('ok'); fb.className = 'eh-fb ok'; fb.innerHTML = '✓ ' + d.why; }
-    else { if (!found) { li.querySelector('.tok[data-err]').classList.add('answer'); li.querySelector('.eh-fix').classList.add('open'); }
-      inp.classList.add('bad'); fb.className = 'eh-fb bad'; fb.innerHTML = `✗ Đáp án: <b>${d.e}</b> → <b>${showAns(d.a)}</b>. ${d.why}`; } });
-  const r = document.querySelector('#D1 .result');
-  r.textContent = `${right}/${EH.length} đúng · bấm nhầm ${S.eh.miss} lần`; r.style.color = right === EH.length ? 'var(--ok)' : 'var(--bad)';
+  S.secs.D1 = true;
+  lis.forEach(li => { if (!li.dataset.checked) ehCheckOne(li); });
+  const right = lis.filter(li => li.querySelector('input').dataset.done === '1').length;
+  ehSummary();
   const b = $('ehSubmit'); b.disabled = true; b.textContent = 'Đã nộp';
   if (!silent) { right === EH.length ? fanfare() : ting(); saveNow(); }
   updateScore(); updateProgress();
